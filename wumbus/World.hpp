@@ -9,6 +9,7 @@
 #ifndef World_hpp
 #define World_hpp
 
+#include "State.hpp"
 #include <stdio.h>
 #include <vector>
 

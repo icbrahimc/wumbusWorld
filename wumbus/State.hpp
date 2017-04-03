@@ -9,7 +9,9 @@
 #ifndef State_hpp
 #define State_hpp
 
+#include <iostream>
 #include <stdio.h>
+#include <utility>
 
 enum status { NO = -1, POSS = 0, YES = 1};
 
@@ -20,6 +22,8 @@ private:
     status pit;
     status stench;
     status wumbus;
+    std::pair<int, int> location;
+    
 public:
     // Constructor.
     State();
@@ -30,6 +34,7 @@ public:
     void setPit(status input) { pit = input; };
     void setStench(status input) { stench = input; };
     void setWumbus(status input) { wumbus = input; };
+    void setLocation(int first, int second) { location = std::pair<int, int>(first, second); };
     
     // Return the status of the particular state.
     bool isBreeze() const { return this->breeze == YES; };
