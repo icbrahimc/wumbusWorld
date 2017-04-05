@@ -15,8 +15,6 @@
 #include <stdio.h>
 #include <vector>
 
-std::map<std::pair<int, int>, std::map<direction, std::pair<int, int>>> adjMap;
-
 class World {
 private:
     State board[4][4];

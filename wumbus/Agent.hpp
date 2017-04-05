@@ -31,6 +31,7 @@ public:
     // Constructor.
     Agent() {
         arrow = true;
+        look = right;
     };
     
     // Setters.

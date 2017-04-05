@@ -12,8 +12,6 @@
 #include <iostream>
 #include <stdio.h>
 
-enum status { NO = -1, POSS = 0, YES = 1};
-
 class State {
 private:
     bool breeze;
@@ -26,11 +24,11 @@ private:
 public:
     // Constructor.
     State() {
-        breeze = NO;
-        glitter = NO;
-        pit = NO;
-        stench = NO;
-        wumpus = NO;
+        breeze = false;
+        glitter = false;
+        pit = false;
+        stench = false;
+        wumpus = false;
         location = std::pair<int, int>(0, 0);
     };
     
