@@ -8,6 +8,7 @@
 
 #include "Agent.hpp"
 
+// Set the adjacency pairs for the particular agent in at a coordinate.
 void Agent::setAdjacency() {
     int vert = location.first;
     int horz = location.second;
