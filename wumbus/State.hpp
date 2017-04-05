@@ -16,11 +16,11 @@ enum status { NO = -1, POSS = 0, YES = 1};
 
 class State {
 private:
-    status breeze;
-    status glitter;
-    status pit;
-    status stench;
-    status wumpus;
+    bool breeze;
+    bool glitter;
+    bool pit;
+    bool stench;
+    bool wumpus;
     std::pair<int, int> location;
     
 public:
@@ -35,18 +35,18 @@ public:
     };
     
     // Change the status of the five states.
-    void setBreeze(status input) { breeze = input; };
-    void setGlitter(status input) { glitter = input; };
-    void setPit(status input) { pit = input; };
-    void setStench(status input) { stench = input; };
-    void setwumpus(status input) { wumpus = input; };
+    void setBreeze(bool input) { breeze = input; };
+    void setGlitter(bool input) { glitter = input; };
+    void setPit(bool input) { pit = input; };
+    void setStench(bool input) { stench = input; };
+    void setwumpus(bool input) { wumpus = input; };
     void setLocation(int first, int second) { location = std::pair<int, int>(first, second); };
     
     // Return the status of the particular state.
-    bool isBreeze() const { return this->breeze == YES; };
-    bool isGlitter() const { return this->glitter == YES;};
-    bool isPit() const { return this->pit == YES; };
-    bool isStench() const { return this->stench == YES; };
-    bool iswumpus() const { return this->wumpus == YES; };
+    bool isBreeze() const { return this->breeze == true; };
+    bool isGlitter() const { return this->glitter == true;};
+    bool isPit() const { return this->pit == true; };
+    bool isStench() const { return this->stench == true; };
+    bool iswumpus() const { return this->wumpus == true; };
 };
 #endif /* State_hpp */

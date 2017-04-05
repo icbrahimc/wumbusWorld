@@ -12,7 +12,7 @@
 #include <iostream>
 #include <stdio.h>
 
-enum direction { left = 1, right = 2, up = 3, down = 4 };
+enum direction { left = 0, right = 1, up = 2, down = 3 };
 
 class Agent {
 private:
