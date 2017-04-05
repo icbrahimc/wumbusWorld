@@ -10,14 +10,22 @@
 #define Agent_hpp
 
 #include <iostream>
+#include <map>
 #include <stdio.h>
 
 enum direction { left = 0, right = 1, up = 2, down = 3 };
+
+// Agent class.
+//  - Represents the agent passing through the board.
+//  - Contains the arrow bool which represents whether the agent has an arrow or not.
+//  - Contains a map that has all the adjacent tiles.
+//  - Contains the coordinates to the users locations.
 
 class Agent {
 private:
     bool arrow;
     direction look;
+    std::map<direction, std::pair<int, int>> adjacency;
     std::pair<int, int> location;
 public:
     // Constructor.
