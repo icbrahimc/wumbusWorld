@@ -32,6 +32,7 @@ public:
     Agent() {
         arrow = true;
         look = right;
+//        location = std::pair<int, int>(
     };
     
     // Setters.

@@ -28,6 +28,23 @@ public:
             }
         }
     };
+    
+    void printWorld() {
+        std::cout << std::endl;
+        std::cout << "  ";
+        for (int count = 0; count < 4; count++) {
+            std::cout << count << " ";
+        }
+        std::cout << std::endl;
+        
+        for (int i = 0; i < 4; i++) {
+            std::cout << i << " ";
+            for (int j = 0; j < 4; j++) {
+                std::cout << "-" << " ";
+            }
+            std::cout << std::endl;
+        }
+    };
 };
 
 #endif /* World_hpp */

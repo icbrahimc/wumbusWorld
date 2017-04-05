@@ -10,7 +10,7 @@
 #include <iostream>
 
 int main(int argc, const char * argv[]) {
-    
-    std::cout << "Ibrahim\n";
+    World wumpus = World();
+    wumpus.printWorld();
     return 0;
 }
