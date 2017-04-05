@@ -12,6 +12,7 @@
 #include <iostream>
 #include <map>
 #include <stdio.h>
+#include <vector>
 
 enum direction { left = 0, right = 1, up = 2, down = 3 };
 
@@ -32,12 +33,13 @@ public:
     Agent() {
         arrow = true;
         look = right;
-//        location = std::pair<int, int>(
+        location = std::pair<int, int>(3, 0);
     };
     
     // Setters.
     void setDirection(direction input) { look = input; };
     void setLocation(int first, int last) { location = std::pair<int, int>(first, last); };
+    void setAdjacency();
     
     // Getters.
     direction returnDirection() const { return look; };

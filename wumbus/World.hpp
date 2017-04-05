@@ -29,6 +29,7 @@ public:
         }
     };
     
+    // Print the world.
     void printWorld() {
         std::cout << std::endl;
         std::cout << "  ";

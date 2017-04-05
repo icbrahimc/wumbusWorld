@@ -6,10 +6,14 @@
 //  Copyright © 2017 Ibrahim Conteh. All rights reserved.
 //
 
+#include "Agent.hpp"
 #include "World.hpp"
 #include <iostream>
 
 int main(int argc, const char * argv[]) {
+    Agent agent = Agent();
+    agent.setLocation(1, 1);
+    agent.setAdjacency();
     World wumpus = World();
     wumpus.printWorld();
     return 0;
