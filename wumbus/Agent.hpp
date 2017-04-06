@@ -30,6 +30,7 @@ private:
     std::map<direction, std::pair<int, int>> adjacency;
     std::pair<int, int> location;
     std::map<std::pair<int, int>, bool> visited;
+    
 public:
     // Constructor.
     Agent() {

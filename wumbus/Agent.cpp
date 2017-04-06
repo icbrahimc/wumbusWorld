@@ -26,12 +26,16 @@ void Agent::setAdjacency() {
 //    std::pair<int, int> down = std::pair<int, int>(vert + 1, horz);
     
     for (int count = 0; count < 4; count++) {
-        if (pairDir[count].first < 0 || 4 <= pairDir[count].first) {
-            continue;
-        } else if (pairDir[count].second < 0 || 4 <= pairDir[count].second) {
+        if (visited[pairDir[count]] == true) {
             continue;
         } else {
-            adjacency.insert(std::pair<direction, std::pair<int, int>>(static_cast<direction>(count), pairDir[count]));
+            if (pairDir[count].first < 0 || 4 <= pairDir[count].first) {
+                continue;
+            } else if (pairDir[count].second < 0 || 4 <= pairDir[count].second) {
+                continue;
+            } else {
+                adjacency.insert(std::pair<direction, std::pair<int, int>>(static_cast<direction>(count), pairDir[count]));
+            }
         }
     }
     
