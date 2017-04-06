@@ -9,12 +9,9 @@
 #ifndef State_hpp
 #define State_hpp
 
+#include "Constants.cpp"
 #include <iostream>
 #include <stdio.h>
-
-// Store the percepts as a vector.
-// b = breeze, g = glitter, p = pit, s = stench, w = wumpus.
-enum percept { b = 0, g = 1, p = 2, s = 3, w = 4};
 
 class State {
 private:
@@ -30,11 +27,11 @@ private:
 public:
     // Constructor.
     State() {
-        percepts[b] = false;
-        percepts[g] = false;
-        percepts[p] = false;
-        percepts[s] = false;
-        percepts[w] = false;
+        percepts[B] = false;
+        percepts[G] = false;
+        percepts[P] = false;
+        percepts[S] = false;
+        percepts[W] = false;
         safe = true;
 //        breeze = false;
 //        glitter = false;
@@ -45,20 +42,20 @@ public:
     };
     
     // Change the status of the five states.
-    void setBreeze(bool input) { percepts[b] = input; };
-    void setGlitter(bool input) { percepts[g] = input; };
-    void setPit(bool input) { percepts[p] = input; };
-    void setStench(bool input) { percepts[s] = input; };
-    void setWumpus(bool input) { percepts[w] = input; };
+    void setBreeze(bool input) { percepts[B] = input; };
+    void setGlitter(bool input) { percepts[G] = input; };
+    void setPit(bool input) { percepts[P] = input; };
+    void setStench(bool input) { percepts[S] = input; };
+    void setWumpus(bool input) { percepts[W] = input; };
     void setLocation(int first, int second) { location = std::pair<int, int>(first, second); };
     void setSafety();
     
     // Return the status of the particular state.
-    bool isBreeze() const { return this->percepts[b] == true; };
-    bool isGlitter() const { return this->percepts[g] == true;};
-    bool isPit() const { return this->percepts[p] == true; };
-    bool isStench() const { return this->percepts[s] == true; };
-    bool isWumpus() const { return this->percepts[w] == true; };
+    bool isBreeze() const { return this->percepts[B] == true; };
+    bool isGlitter() const { return this->percepts[G] == true;};
+    bool isPit() const { return this->percepts[P] == true; };
+    bool isStench() const { return this->percepts[S] == true; };
+    bool isWumpus() const { return this->percepts[W] == true; };
     bool isSafe() const { return this->safe == true; };
 };
 #endif /* State_hpp */

@@ -8,11 +8,14 @@
 
 #include "Agent.hpp"
 #include "State.hpp"
+#include "Symbol.hpp"
 #include "World.hpp"
 #include <iostream>
 
 int main(int argc, const char * argv[]) {
     Agent agent = Agent();
+    Symbol sym = Symbol(B, std::pair<int, int>(0, 0));
+    std::cout << sym.returnStringValue() << std::endl;
 //    agent.setLocation(1, 1);
 //    agent.setAdjacency();
 //    agent.turnAgent();

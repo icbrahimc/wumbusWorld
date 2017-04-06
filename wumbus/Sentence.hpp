@@ -10,5 +10,8 @@
 #define Sentence_hpp
 
 #include <stdio.h>
+class Sentence {
+    
+};
 
 #endif /* Sentence_hpp */

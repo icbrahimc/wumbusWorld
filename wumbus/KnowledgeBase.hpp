@@ -9,6 +9,13 @@
 #ifndef KnowledgeBase_hpp
 #define KnowledgeBase_hpp
 
+#include "Sentence.hpp"
 #include <stdio.h>
+#include <vector>
+
+class KnowledgeBase {
+private:
+    std::vector<Sentence> kb;
+};
 
 #endif /* KnowledgeBase_hpp */
