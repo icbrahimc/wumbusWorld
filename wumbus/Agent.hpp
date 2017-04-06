@@ -21,6 +21,7 @@ enum direction { left = 0, right = 1, up = 2, down = 3 };
 //  - Contains the arrow bool which represents whether the agent has an arrow or not.
 //  - Contains a map that has all the adjacent tiles.
 //  - Contains the coordinates to the users locations.
+//  - Contains the coordinates to visited locations.
 
 class Agent {
 private:
@@ -28,6 +29,7 @@ private:
     direction look;
     std::map<direction, std::pair<int, int>> adjacency;
     std::pair<int, int> location;
+    std::map<std::pair<int, int>, bool> visited;
 public:
     // Constructor.
     Agent() {
@@ -40,6 +42,7 @@ public:
     void setDirection(direction input) { look = input; };
     void setLocation(int first, int last) { location = std::pair<int, int>(first, last); };
     void setAdjacency();
+    void setVisited();
     
     // Getters.
     direction returnDirection() const { return look; };

@@ -82,3 +82,8 @@ void Agent::makeAMove(std::pair<int, int> newTile) {
         
     } while (!match);
 }
+
+// Set the location as visited in the database.
+void Agent::setVisited() {
+    visited.insert(std::pair<std::pair<int, int>, bool>(location, true));
+}
