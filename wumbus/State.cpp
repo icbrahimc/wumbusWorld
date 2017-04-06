@@ -7,3 +7,17 @@
 //
 
 #include "State.hpp"
+
+// Set the safety of the state.
+void State::setSafety() {
+    int count = 0;
+    for ( ; count < 5; count++) {
+        if (percepts[count] == true) {
+            break;
+        }
+    }
+    
+    if (count == 5) {
+        safe = true;
+    }
+}
