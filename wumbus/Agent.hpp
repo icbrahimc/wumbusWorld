@@ -44,5 +44,9 @@ public:
     // Getters.
     direction returnDirection() const { return look; };
     std::pair<int, int> returnLocation() const { return location; };
+    
+    // Agent based moves.
+    void turnAgent();
+    void makeAMove(std::pair<int, int> newTile);
 };
 #endif /* Agent_hpp */
