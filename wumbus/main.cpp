@@ -14,7 +14,7 @@
 
 int main(int argc, const char * argv[]) {
     Agent agent = Agent();
-    Symbol sym = Symbol(B, std::pair<int, int>(0, 0));
+    Symbol sym = Symbol(0, std::pair<int, int>(0, 0));
     std::cout << sym.returnStringValue() << std::endl;
 //    agent.setLocation(1, 1);
 //    agent.setAdjacency();

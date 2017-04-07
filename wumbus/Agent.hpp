@@ -13,6 +13,7 @@
 #include <map>
 #include <stdio.h>
 #include "Symbol.hpp"
+#include "KnowledgeBase.hpp"
 #include <vector>
 
 enum direction { left = 0, right = 1, up = 2, down = 3 };

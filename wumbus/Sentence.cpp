@@ -7,3 +7,8 @@
 //
 
 #include "Sentence.hpp"
+
+void Sentence::writeIFFSentence(Symbol first, std::vector<Symbol> second) {
+    // Mimic (#P V Q) ^ (#Q V P)
+    bool secondChain = second[0].returnTruthValue();
+}

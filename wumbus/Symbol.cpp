@@ -4,7 +4,7 @@
 //
 //  Created by Ibrahim Conteh on 4/6/17.
 //  Copyright © 2017 Ibrahim Conteh. All rights reserved.
-//
+// B: 0, G: 1, P: 2, S: 3, P: 4
 
 #include "Symbol.hpp"
 std::string intToString(int);

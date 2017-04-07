@@ -12,6 +12,7 @@
 #include "Agent.hpp"
 #include <stdio.h>
 #include <string>
+#include <map>
 #include "Symbol.hpp"
 
 
@@ -32,7 +33,8 @@ public:
     bool returnTruthValue() { return truthValue; };
     
     // Setters.
-    void determineTruthValue(Agent);
+    void determineTruthValue(std::map<std::string, Symbol>);
+    void writeIFFSentence(Symbol, std::vector<Symbol>);
 };
 
 #endif /* Sentence_hpp */
