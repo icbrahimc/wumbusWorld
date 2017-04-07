@@ -75,6 +75,7 @@
 		8E962A401E93018200E70D54 /* wumbus */ = {
 			isa = PBXGroup;
 			children = (
+				8E962A5F1E97DD4400E70D54 /* Logic */,
 				8E962A411E93018200E70D54 /* main.cpp */,
 				8E962A481E9302CD00E70D54 /* World.cpp */,
 				8E962A491E9302CD00E70D54 /* World.hpp */,
@@ -82,14 +83,21 @@
 				8E962A4C1E93043900E70D54 /* State.hpp */,
 				8E962A4E1E930FA400E70D54 /* Agent.cpp */,
 				8E962A4F1E930FA400E70D54 /* Agent.hpp */,
-				8E962A511E968A1100E70D54 /* Symbol.cpp */,
-				8E962A521E968A1100E70D54 /* Symbol.hpp */,
-				8E962A541E96952200E70D54 /* KnowledgeBase.cpp */,
-				8E962A551E96952200E70D54 /* KnowledgeBase.hpp */,
-				8E962A5C1E97DC8B00E70D54 /* LogicSentence.cpp */,
-				8E962A5D1E97DC8B00E70D54 /* LogicSentence.hpp */,
 			);
 			path = wumbus;
+			sourceTree = "<group>";
+		};
+		8E962A5F1E97DD4400E70D54 /* Logic */ = {
+			isa = PBXGroup;
+			children = (
+				8E962A511E968A1100E70D54 /* Symbol.cpp */,
+				8E962A521E968A1100E70D54 /* Symbol.hpp */,
+				8E962A5C1E97DC8B00E70D54 /* LogicSentence.cpp */,
+				8E962A5D1E97DC8B00E70D54 /* LogicSentence.hpp */,
+				8E962A541E96952200E70D54 /* KnowledgeBase.cpp */,
+				8E962A551E96952200E70D54 /* KnowledgeBase.hpp */,
+			);
+			name = Logic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
