@@ -13,7 +13,7 @@
 		8E962A501E930FA400E70D54 /* Agent.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E962A4E1E930FA400E70D54 /* Agent.cpp */; };
 		8E962A531E968A1100E70D54 /* Symbol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E962A511E968A1100E70D54 /* Symbol.cpp */; };
 		8E962A561E96952200E70D54 /* KnowledgeBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E962A541E96952200E70D54 /* KnowledgeBase.cpp */; };
-		8E962A591E96958E00E70D54 /* Sentence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E962A571E96958E00E70D54 /* Sentence.cpp */; };
+		8E962A5E1E97DC8B00E70D54 /* LogicSentence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E962A5C1E97DC8B00E70D54 /* LogicSentence.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -41,8 +41,8 @@
 		8E962A521E968A1100E70D54 /* Symbol.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Symbol.hpp; sourceTree = "<group>"; };
 		8E962A541E96952200E70D54 /* KnowledgeBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = KnowledgeBase.cpp; sourceTree = "<group>"; };
 		8E962A551E96952200E70D54 /* KnowledgeBase.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KnowledgeBase.hpp; sourceTree = "<group>"; };
-		8E962A571E96958E00E70D54 /* Sentence.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sentence.cpp; sourceTree = "<group>"; };
-		8E962A581E96958E00E70D54 /* Sentence.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Sentence.hpp; sourceTree = "<group>"; };
+		8E962A5C1E97DC8B00E70D54 /* LogicSentence.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LogicSentence.cpp; sourceTree = "<group>"; };
+		8E962A5D1E97DC8B00E70D54 /* LogicSentence.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = LogicSentence.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,8 +86,8 @@
 				8E962A521E968A1100E70D54 /* Symbol.hpp */,
 				8E962A541E96952200E70D54 /* KnowledgeBase.cpp */,
 				8E962A551E96952200E70D54 /* KnowledgeBase.hpp */,
-				8E962A571E96958E00E70D54 /* Sentence.cpp */,
-				8E962A581E96958E00E70D54 /* Sentence.hpp */,
+				8E962A5C1E97DC8B00E70D54 /* LogicSentence.cpp */,
+				8E962A5D1E97DC8B00E70D54 /* LogicSentence.hpp */,
 			);
 			path = wumbus;
 			sourceTree = "<group>";
@@ -154,7 +154,7 @@
 				8E962A4A1E9302CD00E70D54 /* World.cpp in Sources */,
 				8E962A501E930FA400E70D54 /* Agent.cpp in Sources */,
 				8E962A421E93018200E70D54 /* main.cpp in Sources */,
-				8E962A591E96958E00E70D54 /* Sentence.cpp in Sources */,
+				8E962A5E1E97DC8B00E70D54 /* LogicSentence.cpp in Sources */,
 				8E962A4D1E93043900E70D54 /* State.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

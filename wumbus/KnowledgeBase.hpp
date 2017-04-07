@@ -9,7 +9,9 @@
 #ifndef KnowledgeBase_hpp
 #define KnowledgeBase_hpp
 
-#include "Sentence.hpp"
+//#include "Sentence.hpp"
+#include "LogicSentence.hpp"
+#include "Symbol.hpp"
 #include <stdio.h>
 #include <map>
 #include <string>
@@ -17,11 +19,13 @@
 
 class KnowledgeBase {
 private:
-    std::vector<Symbol> kb;
+    std::vector<LogicSentence> kb;
     std::map<std::string, Symbol> found;
 public:
     // Constructor.
-    KnowledgeBase();
+    KnowledgeBase() {
+//        Sentence s = Sentence();
+    };
 };
 
 #endif /* KnowledgeBase_hpp */
