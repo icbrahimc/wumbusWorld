@@ -10,8 +10,27 @@
 #define Sentence_hpp
 
 #include <stdio.h>
+#include <string>
+#include "Symbol.hpp"
+
+// Sentence class.
+//  Logic sentence is the symbols with the connectives.
+//  Truth Value is the value of the atomic sentence.
+
 class Sentence {
+private:
+    std::string logicSentence;
+    bool truthValue;
+public:
+    // Constructor
+    Sentence();
     
+    // Getters.
+    std::string returnSentence() { return logicSentence; };
+    bool returnTruthValue() { return truthValue; };
+    
+    // Setters.
+    void determineTruthValue();
 };
 
 #endif /* Sentence_hpp */

@@ -15,18 +15,20 @@
 #include <stdio.h>
 #include <string>
 
-// enum to represent the connectives.
-enum connectives { NOT = 0, AND = 1, OR = 2, IMPLY = 3, IFF = 4 };
+//// enum to represent the connectives.
+//enum connectives { NOT = 0, AND = 1, OR = 2, IMPLY = 3, IFF = 4 };
+
+// Symbol class.
 
 class Symbol {
 private:
-    percepts literal;
+    percept literal;
     bool truthValue;
     std::pair<int, int> location;
     
 public:
     // Constructor.
-    Symbol(percepts input, std::pair<int, int> coord) {
+    Symbol(percept input, std::pair<int, int> coord) {
         literal = input;
         location = coord;
         truthValue = false;
