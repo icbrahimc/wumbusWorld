@@ -61,5 +61,7 @@ public:
     bool isStench() const { return this->percepts[3] == true; };
     bool isWumpus() const { return this->percepts[4] == true; };
     bool isSafe() const { return this->safe == true; };
+    
+    
 };
 #endif /* State_hpp */

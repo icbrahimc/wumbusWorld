@@ -32,6 +32,7 @@ private:
     direction look;
     std::map<direction, std::pair<int, int>> adjacency;
     std::pair<int, int> location;
+    bool agentPercepts[5];
     std::map<std::pair<int, int>, bool> visited;
     
 public:
