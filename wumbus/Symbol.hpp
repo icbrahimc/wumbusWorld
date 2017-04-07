@@ -19,7 +19,8 @@
 
 // Symbol class.
 //  - The symbol class represents the symbolic literal of a specific spot.
-//  - B(1,2): The symbol that there is a breeze in the coordinate (1,2).
+//  - {B(1,2)}: The symbol that there is a breeze in the coordinate (1,2).
+//      - B is the percept, (1,2) is the location, and {B(1,2)} is the entire parsable string.
 class Symbol {
 private:
     int literal;
