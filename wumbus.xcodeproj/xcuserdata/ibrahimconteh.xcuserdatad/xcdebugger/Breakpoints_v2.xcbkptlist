@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wumbus/Symbol.hpp"
-            timestampString = "513231825.815991"
+            timestampString = "513264888.005023"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "class Symbol"
             landmarkType = "3">
          </BreakpointContent>

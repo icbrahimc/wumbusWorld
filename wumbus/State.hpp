@@ -41,11 +41,16 @@ public:
     };
     
     // Change the status of the five states.
-    void setBreeze(bool input) { percepts[0] = input; };
-    void setGlitter(bool input) { percepts[1] = input; };
-    void setPit(bool input) { percepts[2] = input; };
-    void setStench(bool input) { percepts[3] = input; };
-    void setWumpus(bool input) { percepts[4] = input; };
+    void setBreeze();
+    void setGlitter();
+    void setPit();
+    void setStench();
+    void setWumpus();
+//    void setBreeze(bool input) { percepts[0] = input; };
+//    void setGlitter(bool input) { percepts[1] = input; };
+//    void setPit(bool input) { percepts[2] = input; };
+//    void setStench(bool input) { percepts[3] = input; };
+//    void setWumpus(bool input) { percepts[4] = input; };
     void setLocation(int first, int second) { location = std::pair<int, int>(first, second); };
     void setSafety();
     
