@@ -9,9 +9,11 @@
 #ifndef Sentence_hpp
 #define Sentence_hpp
 
+#include "Agent.hpp"
 #include <stdio.h>
 #include <string>
 #include "Symbol.hpp"
+
 
 // Sentence class.
 //  Logic sentence is the symbols with the connectives.
@@ -30,7 +32,7 @@ public:
     bool returnTruthValue() { return truthValue; };
     
     // Setters.
-    void determineTruthValue();
+    void determineTruthValue(Agent);
 };
 
 #endif /* Sentence_hpp */

@@ -12,6 +12,7 @@
 #include <iostream>
 #include <map>
 #include <stdio.h>
+#include "Symbol.hpp"
 #include <vector>
 
 enum direction { left = 0, right = 1, up = 2, down = 3 };
@@ -22,6 +23,7 @@ enum direction { left = 0, right = 1, up = 2, down = 3 };
 //  - Contains a map that has all the adjacent tiles.
 //  - Contains the coordinates to the users locations.
 //  - Contains the coordinates to visited locations.
+//  - Contains the hash map for established symbols from the game.
 
 class Agent {
 private:
@@ -44,6 +46,7 @@ public:
     void setLocation(int first, int last) { location = std::pair<int, int>(first, last); };
     void setAdjacency();
     void setVisited();
+    void storeInSymbolMap(Symbol);
     
     // Getters.
     direction returnDirection() const { return look; };
@@ -52,5 +55,6 @@ public:
     // Agent based moves.
     void turnAgent();
     void makeAMove(std::pair<int, int> newTile);
+    
 };
 #endif /* Agent_hpp */

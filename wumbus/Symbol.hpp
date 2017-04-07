@@ -22,13 +22,13 @@
 
 class Symbol {
 private:
-    percept literal;
+    int literal;
     bool truthValue;
     std::pair<int, int> location;
     
 public:
     // Constructor.
-    Symbol(percept input, std::pair<int, int> coord) {
+    Symbol(int input, std::pair<int, int> coord) {
         literal = input;
         location = coord;
         truthValue = false;

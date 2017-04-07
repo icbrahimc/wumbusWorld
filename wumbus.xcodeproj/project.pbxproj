@@ -14,7 +14,6 @@
 		8E962A531E968A1100E70D54 /* Symbol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E962A511E968A1100E70D54 /* Symbol.cpp */; };
 		8E962A561E96952200E70D54 /* KnowledgeBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E962A541E96952200E70D54 /* KnowledgeBase.cpp */; };
 		8E962A591E96958E00E70D54 /* Sentence.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E962A571E96958E00E70D54 /* Sentence.cpp */; };
-		8E962A5B1E96B95800E70D54 /* Constants.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8E962A5A1E96B95800E70D54 /* Constants.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -44,7 +43,6 @@
 		8E962A551E96952200E70D54 /* KnowledgeBase.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = KnowledgeBase.hpp; sourceTree = "<group>"; };
 		8E962A571E96958E00E70D54 /* Sentence.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Sentence.cpp; sourceTree = "<group>"; };
 		8E962A581E96958E00E70D54 /* Sentence.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Sentence.hpp; sourceTree = "<group>"; };
-		8E962A5A1E96B95800E70D54 /* Constants.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Constants.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,7 +88,6 @@
 				8E962A551E96952200E70D54 /* KnowledgeBase.hpp */,
 				8E962A571E96958E00E70D54 /* Sentence.cpp */,
 				8E962A581E96958E00E70D54 /* Sentence.hpp */,
-				8E962A5A1E96B95800E70D54 /* Constants.cpp */,
 			);
 			path = wumbus;
 			sourceTree = "<group>";
@@ -155,7 +152,6 @@
 				8E962A531E968A1100E70D54 /* Symbol.cpp in Sources */,
 				8E962A561E96952200E70D54 /* KnowledgeBase.cpp in Sources */,
 				8E962A4A1E9302CD00E70D54 /* World.cpp in Sources */,
-				8E962A5B1E96B95800E70D54 /* Constants.cpp in Sources */,
 				8E962A501E930FA400E70D54 /* Agent.cpp in Sources */,
 				8E962A421E93018200E70D54 /* main.cpp in Sources */,
 				8E962A591E96958E00E70D54 /* Sentence.cpp in Sources */,

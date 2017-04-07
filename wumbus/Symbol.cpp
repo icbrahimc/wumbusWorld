@@ -12,19 +12,19 @@ std::string intToString(int);
 // Returns the string value of the literal for printing.
 std::string Symbol::returnStringValue() {
     switch (literal) {
-        case B:
+        case 0:
             return "B(" + intToString(location.first) + ", " + intToString(location.second) + ")";
             break;
-        case G:
+        case 1:
             return "G(" + intToString(location.first) + ", " + intToString(location.second) + ")";
             break;
-        case P:
+        case 2:
             return "P(" + intToString(location.first) + ", " + intToString(location.second) + ")";
             break;
-        case S:
+        case 3:
             return "S(" + intToString(location.first) + ", " + intToString(location.second) + ")";
             break;
-        case W:
+        case 4:
             return "W(" + intToString(location.first) + ", " + intToString(location.second) + ")";
             break;
             
