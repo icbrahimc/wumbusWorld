@@ -10,8 +10,19 @@
 #define LogicSentence_hpp
 
 #include <stdio.h>
+#include <string>
 
 class LogicSentence {
+private:
+    std::string sentenceRep;
+    bool truthValue;
+public:
+    // Constructor
+    LogicSentence();
+    
+    // Getters.
+    std::string returnSentence() { return sentenceRep; };
+    bool returnTruthValue() { return truthValue; };
 
 };
 #endif /* LogicSentence_hpp */
