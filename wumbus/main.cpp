@@ -7,15 +7,20 @@
 //
 
 #include "Agent.hpp"
+#include "LogicSentence.hpp"
 #include "State.hpp"
 #include "Symbol.hpp"
 #include "World.hpp"
 #include <iostream>
 
 int main(int argc, const char * argv[]) {
+    Symbol sym = Symbol(0, std::pair<int, int>(0, 0));
+    LogicSentence log = LogicSentence(sym);
+    log.setNot();
+    std::cout << log.returnSentence() << std::endl;
     Agent agent = Agent();
     //Sentence sen = Sentence();
-    Symbol sym = Symbol(0, std::pair<int, int>(0, 0));
+    
     std::cout << sym.returnStringValue() << std::endl;
 //    agent.setLocation(1, 1);
 //    agent.setAdjacency();

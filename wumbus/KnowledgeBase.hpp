@@ -20,12 +20,13 @@
 class KnowledgeBase {
 private:
     std::vector<LogicSentence> kb;
-    std::map<std::string, Symbol> found;
 public:
     // Constructor.
     KnowledgeBase() {
 //        Sentence s = Sentence();
     };
+    
+    
 };
 
 #endif /* KnowledgeBase_hpp */

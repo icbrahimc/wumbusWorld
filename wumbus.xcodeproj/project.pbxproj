@@ -75,8 +75,8 @@
 		8E962A401E93018200E70D54 /* wumbus */ = {
 			isa = PBXGroup;
 			children = (
-				8E962A5F1E97DD4400E70D54 /* Logic */,
 				8E962A411E93018200E70D54 /* main.cpp */,
+				8E962A5F1E97DD4400E70D54 /* Logic */,
 				8E962A481E9302CD00E70D54 /* World.cpp */,
 				8E962A491E9302CD00E70D54 /* World.hpp */,
 				8E962A4B1E93043900E70D54 /* State.cpp */,
@@ -292,6 +292,7 @@
 				8E962A471E93018200E70D54 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

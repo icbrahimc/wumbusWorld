@@ -11,7 +11,7 @@
 
 #include <stdio.h>
 #include <string>
-#include "Symbol.hpp"
+#include <Symbol.hpp>
 
 class LogicSentence {
 private:
@@ -19,16 +19,14 @@ private:
     bool truthValue;
 public:
     // Constructor
-    LogicSentence(Symbol literal) {
-        sentenceRep = literal.returnStringValue();
-    };
+    LogicSentence();
     
     // Getters.
     std::string returnSentence() { return sentenceRep; };
     bool returnTruthValue() { return truthValue; };
     
     // Setters.
-    void setNot();
+    void setNot(Symbol)
 
 };
 #endif /* LogicSentence_hpp */

@@ -7,3 +7,11 @@
 //
 
 #include "LogicSentence.hpp"
+
+// Set the sentence to a not.
+// Ex:
+//  - Take P and ~(P).
+void LogicSentence::setNot() {
+    std::string newSentence = "~(" + sentenceRep + ")";
+    sentenceRep = newSentence;
+}
