@@ -11,6 +11,7 @@
 // helper functions.
 bool isNotAnd(char);
 bool isNotOr(char);
+bool isNotImplies(char);
 
 // Set the sentence to a not.
 // Ex:
@@ -67,11 +68,40 @@ void LogicSentence::setOr(Symbol literal) {
     }
 }
 
+// Add the implies connective to the sentence.
+// Ex:
+//  - Take P and Q.
+//  - Return P > Q.
+void  LogicSentence::setImplies(Symbol literal) {
+    bool sameSymbol = true;
+    std::string newSentence;
+    // Check if the symbols are the same.
+    for (int count = 0; count < sentenceRep.size(); count++) {
+        if (isNotImplies(sentenceRep[count])) {
+            newSentence = "((" + sentenceRep + ")" + " > " + literal.returnStringValue() + ")";
+            sentenceRep = newSentence;
+            sameSymbol = false;
+            break;
+        }
+    }
+    
+    if (sameSymbol) {
+        newSentence = "(" + sentenceRep + " > " + literal.returnStringValue() + ")";
+        sentenceRep = newSentence;
+    }
+    
+}
+
+// Helper functions.
 bool isNotAnd(char input) {
     return (input == '|' || input == '~' || input == '>' || input == '=');
 }
 
 bool isNotOr(char input) {
     return (input == '&' || input == '~' || input == '>' || input == '=');
+}
+
+bool isNotImplies(char input) {
+    return (input == '&' || input == '~' || input == '|' || input == '=');
 }
 

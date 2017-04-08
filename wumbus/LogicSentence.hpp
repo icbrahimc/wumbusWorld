@@ -31,6 +31,7 @@ public:
     void setNot();
     void setAnd(Symbol);
     void setOr(Symbol);
+    void setImplies(Symbol);
 
 };
 #endif /* LogicSentence_hpp */

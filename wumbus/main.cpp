@@ -19,7 +19,7 @@ int main(int argc, const char * argv[]) {
     Symbol sym2 = Symbol(2, std::pair<int, int>(0, 1));
     LogicSentence log = LogicSentence(sym);
     log.setAnd(sym1);
-    log.setOr(sym2);
+    log.setImplies(sym2);
 //    log.setNot();
     std::cout << log.returnSentence() << std::endl;
     Agent agent = Agent();
