@@ -46,6 +46,8 @@ public:
             std::cout << std::endl;
         }
     };
+    
+    State returnState(std::pair<int, int> coord) { return board[coord.first][coord.second]; };
 };
 
 #endif /* World_hpp */

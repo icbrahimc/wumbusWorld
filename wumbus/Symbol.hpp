@@ -24,7 +24,6 @@
 class Symbol {
 private:
     int literal;
-    bool truthValue;
     std::pair<int, int> location;
     
 public:
@@ -32,14 +31,9 @@ public:
     Symbol(int input, std::pair<int, int> coord) {
         literal = input;
         location = coord;
-        truthValue = false;
     };
     
-    // Setters.
-    void setTruthValue(bool input) { truthValue = input; };
-    
-    // Return the truth value of the literal.
-    bool returnTruthValue() { return truthValue; };
+    // Getters.
     std::pair<int, int> returnLocation() { return location; };
     std::string returnStringValue();
 };

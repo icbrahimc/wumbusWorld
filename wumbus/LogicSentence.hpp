@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include <string>
 #include "Symbol.hpp"
+#include <vector>
 
 class LogicSentence {
 private:
@@ -29,9 +30,10 @@ public:
     
     // Setters.
     void setNot();
-    void setAnd(Symbol);
-    void setOr(Symbol);
-    void setImplies(Symbol);
+    void setAnd();
+    void setOr();
+    void setImplies();
+//    void set
 
 };
 #endif /* LogicSentence_hpp */

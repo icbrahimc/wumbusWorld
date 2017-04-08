@@ -10,16 +10,17 @@
 #include <map>
 #include <string>
 
-using namespace std;
-
-string notFunc(string);
+std::string notFunc(std::string);
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    std::cout << "Hello, World!\n";
+    std::cout << "Brooklyn!\n";
+    std::cout << "Brooklyn";
+    std::cout << "Ouch";
+    std::cout << notFunc("A") << std::endl;
     return 0;
 }
 
-string notFunc(string input) {
+std::string notFunc(std::string input) {
     return "~{" + input + "}";
 }

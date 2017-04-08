@@ -48,7 +48,6 @@ public:
     void setLocation(int first, int last) { location = std::pair<int, int>(first, last); };
     void setAdjacency();
     void setVisited();
-    void storeInSymbolMap(Symbol);
     
     // Getters.
     direction returnDirection() const { return look; };
