@@ -16,6 +16,14 @@
 int main(int argc, const char * argv[]) {
     Agent person = Agent();
     World game = World();
+    State currentState = game.returnState(person.returnLocation());
+    person.setVisited();
+    // Get the status of the state. Before you put it into the the KB.
+    currentState.setBreeze();
+    currentState.setGlitter();
+    currentState.setPit();
+    currentState.setStench();
+    currentState.setWumpus();
 //    Symbol sym = Symbol(0, std::pair<int, int>(0, 0));
 //    Symbol sym1 = Symbol(2, std::pair<int, int>(1, 0));
 //    Symbol sym2 = Symbol(2, std::pair<int, int>(0, 1));

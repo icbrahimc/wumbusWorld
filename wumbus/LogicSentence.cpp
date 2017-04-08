@@ -72,7 +72,7 @@ void LogicSentence::setOr(Symbol literal) {
 // Ex:
 //  - Take P and Q.
 //  - Return P > Q.
-void  LogicSentence::setImplies(Symbol literal) {
+void LogicSentence::setImplies(Symbol literal) {
     bool sameSymbol = true;
     std::string newSentence;
     // Check if the symbols are the same.

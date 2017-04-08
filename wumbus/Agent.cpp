@@ -91,8 +91,3 @@ void Agent::makeAMove(std::pair<int, int> newTile) {
 void Agent::setVisited() {
     visited.insert(std::pair<std::pair<int, int>, bool>(location, true));
 }
-
-void Agent::storeInSymbolMap(Symbol newSymbol) {
-    std::string symbolString = newSymbol.returnStringValue();
-    //symbolValue.insert(std::pair<std::string, Symbol>(symbolString, newSymbol));
-}

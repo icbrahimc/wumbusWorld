@@ -30,9 +30,9 @@ public:
     
     // Setters.
     void setNot();
-    void setAnd();
-    void setOr();
-    void setImplies();
+    void setAnd(Symbol);
+    void setOr(Symbol);
+    void setImplies(Symbol);
 //    void set
 
 };
