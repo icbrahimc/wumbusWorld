@@ -29,6 +29,8 @@ public:
     
     // Setters.
     void setNot();
+    void setAnd(Symbol);
+    void setOr(Symbol);
 
 };
 #endif /* LogicSentence_hpp */

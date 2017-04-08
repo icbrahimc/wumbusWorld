@@ -15,8 +15,12 @@
 
 int main(int argc, const char * argv[]) {
     Symbol sym = Symbol(0, std::pair<int, int>(0, 0));
+    Symbol sym1 = Symbol(2, std::pair<int, int>(1, 0));
+    Symbol sym2 = Symbol(2, std::pair<int, int>(0, 1));
     LogicSentence log = LogicSentence(sym);
-    log.setNot();
+    log.setAnd(sym1);
+    log.setOr(sym2);
+//    log.setNot();
     std::cout << log.returnSentence() << std::endl;
     Agent agent = Agent();
     //Sentence sen = Sentence();
