@@ -11,10 +11,12 @@
 
 #include <iostream>
 #include <stdio.h>
+#include <vector>
 
 class State {
 private:
-    bool percepts[5];
+    std::vector<bool> percepts;
+//    bool percepts[5];
     bool safe;
 //    bool breeze;
 //    bool glitter;
@@ -26,11 +28,15 @@ private:
 public:
     // Constructor.
     State() {
-        percepts[0] = false;
-        percepts[1] = false;
-        percepts[2] = false;
-        percepts[3] = false;
-        percepts[4] = false;
+        // Instantiate the five percepts in the particular state.
+        for (int count = 0; count <  5; count++) {
+            percepts.push_back(false);
+        }
+//        percepts[0] = false;
+//        percepts[1] = false;
+//        percepts[2] = false;
+//        percepts[3] = false;
+//        percepts[4] = false;
         safe = false;
 //        breeze = false;
 //        glitter = false;
