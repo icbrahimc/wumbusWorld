@@ -34,7 +34,10 @@ private:
 //  std::vector<std::pair<int, int>> adjancency;
     std::map<direction, std::pair<int, int>> adjacency;
     std::pair<int, int> location;
-    bool agentPercepts[5];
+    std::vector<bool> agentPercepts;
+    std::vector<std::string> kb;
+    std::map<std::string, bool> subsitutions;
+//    bool agentPercepts[5];
     std::map<std::pair<int, int>, bool> visited;
     
 public:
@@ -50,6 +53,9 @@ public:
     void setLocation(int first, int last) { location = std::pair<int, int>(first, last); };
     void setAdjacency();
     void setVisited();
+    
+    // Knowledge based methods.
+    void tellBreezeSentence();
     
     // Getters.
     direction returnDirection() const { return look; };

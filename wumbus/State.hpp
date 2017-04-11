@@ -54,6 +54,8 @@ public:
     bool isWumpus() const { return this->percepts[4] == true; };
     bool isSafe() const { return this->safe == true; };
     
+    std::vector<bool> returnPercepts() { return percepts; };
+    
     
 };
 #endif /* State_hpp */
