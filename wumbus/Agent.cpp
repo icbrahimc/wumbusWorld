@@ -34,6 +34,8 @@ void Agent::setAdjacency() {
             } else if (pairDir[count].second < 0 || 4 <= pairDir[count].second) {
                 continue;
             } else {
+		// Next push.
+		// adjacency.push_back(std::pair<int, int>(pairDir[count]));
                 adjacency.insert(std::pair<direction, std::pair<int, int>>(static_cast<direction>(count), pairDir[count]));
             }
         }
@@ -43,6 +45,7 @@ void Agent::setAdjacency() {
 //    std::cout << adjacency[right].first << ", " << adjacency[right].second << std::endl;
 }
 
+// Don't necessarily need this.
 // Turn the agent.
 void Agent::turnAgent() {
     switch (look) {

@@ -29,7 +29,9 @@ enum direction { left = 0, right = 1, up = 2, down = 3 };
 class Agent {
 private:
     bool arrow;
+//  delete direction eventually. Probably don't need it.
     direction look;
+//  std::vector<std::pair<int, int>> adjancency;
     std::map<direction, std::pair<int, int>> adjacency;
     std::pair<int, int> location;
     bool agentPercepts[5];
