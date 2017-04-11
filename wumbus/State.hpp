@@ -1,3 +1,4 @@
+
 //
 //  State.hpp
 //  wumpus
@@ -32,17 +33,7 @@ public:
         for (int count = 0; count <  5; count++) {
             percepts.push_back(false);
         }
-//        percepts[0] = false;
-//        percepts[1] = false;
-//        percepts[2] = false;
-//        percepts[3] = false;
-//        percepts[4] = false;
         safe = false;
-//        breeze = false;
-//        glitter = false;
-//        pit = false;
-//        stench = false;
-//        wumpus = false;
         location = std::pair<int, int>(0, 0);
     };
     
@@ -52,11 +43,6 @@ public:
     void setPit();
     void setStench();
     void setWumpus();
-//    void setBreeze(bool input) { percepts[0] = input; };
-//    void setGlitter(bool input) { percepts[1] = input; };
-//    void setPit(bool input) { percepts[2] = input; };
-//    void setStench(bool input) { percepts[3] = input; };
-//    void setWumpus(bool input) { percepts[4] = input; };
     void setLocation(int first, int second) { location = std::pair<int, int>(first, second); };
     void setSafety();
     
