@@ -14,7 +14,8 @@
 #include <iostream>
 
 int main(int argc, const char * argv[]) {
-    otFunc("Ibrahim");
+    LogicSentence lsHelper;
+    std::cout << lsHelper.notFunc("A11") << std::endl;
     Agent person = Agent();
     World game = World();
     State currentState = game.returnState(person.returnLocation());
