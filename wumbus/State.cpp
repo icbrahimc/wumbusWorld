@@ -102,9 +102,18 @@ void State::setAdjacency() {
 
 // Set the location of the state, then call set adajaceny to establish adjacent pieces.
 void State::setBackground(int first, int last) {
+    LogicSentence ls;
     location = std::pair<int, int>(first, last);
     this->setAdjacency();
-    for (int count = 0; count < adjacency.size(); count++) {
-        std::cout << adjacency[count].first << ", " << adjacency[count].second << std::endl;
+    
+    // Set the tautologies from the start.
+    std::string breezeTautology = ls.returnPerceptTautology(0, location, adjacency);
+    std::string stenchTautology = ls.returnPerceptTautology(3, location, adjacency);
+    
+    backgroundKnowledge.push_back(breezeTautology);
+    backgroundKnowledge.push_back(stenchTautology);
+    
+    for (int count = 0; count < backgroundKnowledge.size(); count++) {
+        std::cout << "Background: " << backgroundKnowledge[count] << std::endl;
     }
 }

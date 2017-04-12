@@ -10,6 +10,7 @@
 #ifndef State_hpp
 #define State_hpp
 
+#include "LogicSentence.hpp"
 #include <iostream>
 #include <stdio.h>
 #include <vector>
@@ -20,6 +21,7 @@ private:
     bool safe;
     std::vector<std::pair<int, int>> adjacency;
     std::pair<int, int> location;
+    std::vector<std::string> backgroundKnowledge;
     
 public:
     // Constructor.

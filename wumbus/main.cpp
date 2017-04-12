@@ -15,6 +15,10 @@
 
 int main(int argc, const char * argv[]) {
     LogicSentence lsHelper;
+//    std::vector<std::pair<int, int>> yuh;
+//    yuh.push_back(std::pair<int, int>(1,1));
+//    yuh.push_back(std::pair<int, int>(0,1));
+//    std::cout << lsHelper.returnPerceptTautology(0, std::pair<int, int>(0, 0), yuh) << std::endl;
 //    std::cout << lsHelper.removeSpaces("A11 + B11") << std::endl;
 //    std::cout << lsHelper.isSpace(32) << std::endl;
 //    std::vector<std::string> hey = lsHelper.prepForParse("(A11 & B11)");
