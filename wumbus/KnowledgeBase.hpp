@@ -28,12 +28,20 @@ public:
         kBase.push_back(sentence);
     };
     
+    void tell(std::vector<std::string> sentences) {
+        for (int count = 0; count  < sentences.size(); count++) {
+            kBase.push_back(sentences[count]);
+        }
+    }
+    
     // Ask the knowledge base if the knowledge base entails the sentence.
     bool ask(std::string sentence) {
         LogicSentence ls;
         return ls.ttEntails(kBase, sentence);
         
     };
+    
+    std::vector<std::string> returnKB() { return kBase; };
     
 };
 

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "kbWumpus/main.cpp"
-            timestampString = "513675542.779784"
+            timestampString = "513705120.961778"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
             landmarkName = "postfix(std::vector&lt;std::string&gt; toPostFix)"
             landmarkType = "9">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "kbWumpus/main.cpp"
-            timestampString = "513675542.779784"
+            timestampString = "513705120.961778"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
             landmarkName = "postfix(std::vector&lt;std::string&gt; toPostFix)"
             landmarkType = "9">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "kbWumpus/main.cpp"
-            timestampString = "513675542.779784"
+            timestampString = "513705120.961778"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "187"
-            endingLineNumber = "187"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
             landmarkName = "postfix(std::vector&lt;std::string&gt; toPostFix)"
             landmarkType = "9">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "kbWumpus/main.cpp"
-            timestampString = "513675542.779784"
+            timestampString = "513705120.961778"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "186"
-            endingLineNumber = "186"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
             landmarkName = "postfix(std::vector&lt;std::string&gt; toPostFix)"
             landmarkType = "9">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "kbWumpus/main.cpp"
-            timestampString = "513675542.779784"
+            timestampString = "513705120.961778"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "180"
-            endingLineNumber = "180"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
             landmarkName = "postfix(std::vector&lt;std::string&gt; toPostFix)"
             landmarkType = "9">
          </BreakpointContent>
@@ -90,11 +90,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "kbWumpus/main.cpp"
-            timestampString = "513675542.779784"
+            timestampString = "513705120.961778"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "200"
-            endingLineNumber = "200"
+            startingLineNumber = "211"
+            endingLineNumber = "211"
             landmarkName = "postfix(std::vector&lt;std::string&gt; toPostFix)"
             landmarkType = "9">
          </BreakpointContent>
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "kbWumpus/main.cpp"
-            timestampString = "513675542.779784"
+            timestampString = "513705120.961778"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "265"
-            endingLineNumber = "265"
+            startingLineNumber = "276"
+            endingLineNumber = "276"
             landmarkName = "postfix(std::vector&lt;std::string&gt; toPostFix)"
             landmarkType = "9">
          </BreakpointContent>
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "kbWumpus/main.cpp"
-            timestampString = "513675542.779784"
+            timestampString = "513705120.961778"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "300"
-            endingLineNumber = "300"
+            startingLineNumber = "311"
+            endingLineNumber = "311"
             landmarkName = "plTrue(std::vector&lt;std::string&gt; kb, std::map&lt;std::string, bool&gt; sub)"
             landmarkType = "9">
          </BreakpointContent>
@@ -138,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "kbWumpus/main.cpp"
-            timestampString = "513675542.779784"
+            timestampString = "513705120.961778"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "298"
-            endingLineNumber = "298"
+            startingLineNumber = "309"
+            endingLineNumber = "309"
             landmarkName = "plTrue(std::vector&lt;std::string&gt; kb, std::map&lt;std::string, bool&gt; sub)"
             landmarkType = "9">
          </BreakpointContent>
@@ -154,11 +154,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "kbWumpus/main.cpp"
-            timestampString = "513675542.779784"
+            timestampString = "513705120.961778"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "299"
-            endingLineNumber = "299"
+            startingLineNumber = "310"
+            endingLineNumber = "310"
             landmarkName = "plTrue(std::vector&lt;std::string&gt; kb, std::map&lt;std::string, bool&gt; sub)"
             landmarkType = "9">
          </BreakpointContent>
@@ -202,11 +202,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "kbWumpus/main.cpp"
-            timestampString = "513574349.063552"
+            timestampString = "513703669.404874"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "main(int argc, const char * argv[])"
             landmarkType = "9">
          </BreakpointContent>
@@ -218,11 +218,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "kbWumpus/main.cpp"
-            timestampString = "513675542.779784"
+            timestampString = "513705120.961778"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "350"
-            endingLineNumber = "350"
+            startingLineNumber = "361"
+            endingLineNumber = "361"
             landmarkName = "solveBoolean(bool operOne, bool operTwo, char operation)"
             landmarkType = "9">
          </BreakpointContent>
@@ -234,11 +234,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "kbWumpus/main.cpp"
-            timestampString = "513675542.779784"
+            timestampString = "513705120.961778"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "355"
-            endingLineNumber = "355"
+            startingLineNumber = "366"
+            endingLineNumber = "366"
             landmarkName = "solveBoolean(bool operOne, bool operTwo, char operation)"
             landmarkType = "9">
          </BreakpointContent>
@@ -250,7 +250,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "kbWumpus/main.cpp"
-            timestampString = "513675542.779784"
+            timestampString = "513705120.961778"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "391"
+            endingLineNumber = "391"
+            landmarkName = "solveExpression(std::vector&lt;std::string&gt; postFix, std::map&lt;std::string, bool&gt; expressions)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "kbWumpus/main.cpp"
+            timestampString = "513705120.961778"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "380"
@@ -266,13 +282,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "kbWumpus/main.cpp"
-            timestampString = "513675542.779784"
+            timestampString = "513705120.961778"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "369"
-            endingLineNumber = "369"
-            landmarkName = "solveExpression(std::vector&lt;std::string&gt; postFix, std::map&lt;std::string, bool&gt; expressions)"
-            landmarkType = "9">
+            startingLineNumber = "330"
+            endingLineNumber = "330">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -282,25 +296,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "kbWumpus/main.cpp"
-            timestampString = "513675542.779784"
+            timestampString = "513705120.961778"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "319"
-            endingLineNumber = "319">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "kbWumpus/main.cpp"
-            timestampString = "513675542.779784"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "340"
-            endingLineNumber = "340"
+            startingLineNumber = "351"
+            endingLineNumber = "351"
             landmarkName = "solveBoolean(bool operOne, bool operTwo, char operation)"
             landmarkType = "9">
          </BreakpointContent>
@@ -312,11 +312,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "kbWumpus/main.cpp"
-            timestampString = "513675542.779784"
+            timestampString = "513705120.961778"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "338"
-            endingLineNumber = "338"
+            startingLineNumber = "349"
+            endingLineNumber = "349"
             landmarkName = "solveBoolean(bool operOne, bool operTwo, char operation)"
             landmarkType = "9">
          </BreakpointContent>
@@ -328,11 +328,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "kbWumpus/main.cpp"
-            timestampString = "513675542.779784"
+            timestampString = "513705120.961778"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "391"
-            endingLineNumber = "391"
+            startingLineNumber = "402"
+            endingLineNumber = "402"
             landmarkName = "solveExpression(std::vector&lt;std::string&gt; postFix, std::map&lt;std::string, bool&gt; expressions)"
             landmarkType = "9">
          </BreakpointContent>
@@ -344,7 +344,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "kbWumpus/main.cpp"
-            timestampString = "513675542.779784"
+            timestampString = "513705120.961778"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "407"
+            endingLineNumber = "407"
+            landmarkName = "solveExpression(std::vector&lt;std::string&gt; postFix, std::map&lt;std::string, bool&gt; expressions)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "kbWumpus/main.cpp"
+            timestampString = "513705120.961778"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "396"
@@ -360,27 +376,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "kbWumpus/main.cpp"
-            timestampString = "513675542.779784"
+            timestampString = "513705120.961778"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "385"
-            endingLineNumber = "385"
-            landmarkName = "solveExpression(std::vector&lt;std::string&gt; postFix, std::map&lt;std::string, bool&gt; expressions)"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "kbWumpus/main.cpp"
-            timestampString = "513675542.779784"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "389"
-            endingLineNumber = "389"
+            startingLineNumber = "400"
+            endingLineNumber = "400"
             landmarkName = "solveExpression(std::vector&lt;std::string&gt; postFix, std::map&lt;std::string, bool&gt; expressions)"
             landmarkType = "9">
          </BreakpointContent>

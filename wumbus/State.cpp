@@ -113,9 +113,9 @@ void State::setBackground(int first, int last) {
     backgroundKnowledge.push_back(breezeTautology);
     backgroundKnowledge.push_back(stenchTautology);
     
-    for (int count = 0; count < backgroundKnowledge.size(); count++) {
-        std::cout << "Background: " << backgroundKnowledge[count] << std::endl;
-    }
+//    for (int count = 0; count < backgroundKnowledge.size(); count++) {
+//        std::cout << "Background: " << backgroundKnowledge[count] << std::endl;
+//    }
 }
 
 // Set the status based upon the percepts and instantiate the knowledge field based upon percepts.
@@ -139,7 +139,7 @@ void State::setStatus() {
         sym = Symbol(0, location);
         holder = sym.returnStringValue();
         holder = ls.notFunc(holder);
-        queryKnowledge.push_back(sym.returnStringValue());
+        queryKnowledge.push_back(holder);
     }
     
     if (this->isGlitter()) {
@@ -191,7 +191,7 @@ void State::setStatus() {
         sym = Symbol(4, location);
         holder = sym.returnStringValue();
         holder = ls.notFunc(sym.returnStringValue());
-        queryKnowledge.push_back(sym.returnStringValue());
+        queryKnowledge.push_back(holder);
     }
     
     this->setSafety();

@@ -16,7 +16,7 @@ std::string LogicSentence::notFunc(std::string input) {
 // Return the and logic sentence.
 std::string LogicSentence::andFunc(std::string firstLiteral, std::vector<std::string> multiple) {
     if (multiple.size() == 1) {
-        return firstLiteral + " & " + multiple[0];
+        return "(" + firstLiteral + " & " + multiple[0] + ")";
     } else {
         std::string newSentence = "(" + firstLiteral;
         for(int count = 0; count < multiple.size(); count++) {
@@ -30,7 +30,7 @@ std::string LogicSentence::andFunc(std::string firstLiteral, std::vector<std::st
 // Return the or logic sentence.
 std::string LogicSentence::orFunc(std::string firstLiteral, std::vector<std::string> multiple) {
     if (multiple.size() == 1) {
-        return firstLiteral + " | " + multiple[0];
+        return "(" + firstLiteral + " & " + multiple[0] + ")";
     } else {
         std::string newSentence = "(" + firstLiteral;
         for(int count = 0; count < multiple.size(); count++) {
@@ -50,7 +50,7 @@ std::string LogicSentence::implyFunc(std::string firstLiteral, std::string secon
 std::string LogicSentence::iffFunc(std::string firstLiteral, std::string secondLiteral) {
     std::string first = this->implyFunc(firstLiteral, secondLiteral);
     std::string second = this->implyFunc(secondLiteral, firstLiteral);
-    return first + " & " + second;
+    return "(" + first + " & " + second + ")";
 }
 
 // Split the vector.
@@ -145,7 +145,7 @@ std::vector<std::string> LogicSentence::extract_keys(std::map<std::string, bool>
 std::vector<std::string> LogicSentence::prepForParse(std::string parse) {
     // Eliminate spaces.
     std::string parseString = this->removeSpaces(parse);
-    std::cout << "Parse String: " << parseString << std::endl;
+    //std::cout << "Parse String: " << parseString << std::endl;
     std::string inputString = std::string();
     
     std::vector<std::string> good;
@@ -312,7 +312,11 @@ bool LogicSentence::solveBoolean(bool operOne, bool operTwo, char operation) {
     
     switch (operation) {
         case '~':
-            return !operOne;
+            if (operOne == false) {
+                return true;
+            } else {
+                return false;
+            }
             break;
             
         case '&':
@@ -324,7 +328,7 @@ bool LogicSentence::solveBoolean(bool operOne, bool operTwo, char operation) {
             break;
             
         case '>':
-            if (operOne && !operTwo) {
+            if (operOne == true && operTwo == false) {
                 return false;
             } else {
                 return true;
@@ -357,11 +361,11 @@ bool LogicSentence::solveExpression(std::vector<std::string> postFix, std::map<s
             operandOne = solutionStack[solutionStack.size() - 2];
             solutionStack.pop_back();
             solutionStack.pop_back();
-            
             result = this->solveBoolean(operandOne, operandTwo, dequeueElement[0]);
             solutionStack.push_back(result);
         } else if (this->isValidValue(dequeueElement[0]) && dequeueElement == "~") {
             operandOne = solutionStack[solutionStack.size() - 1];
+            solutionStack.pop_back();
             result = this->solveBoolean(operandOne, operandTwo, dequeueElement[0]);
             solutionStack.push_back(result);
         }
@@ -428,18 +432,25 @@ std::string LogicSentence::returnPerceptTautology(int percept, std::pair<int, in
 // Truth table algorithms.
 bool LogicSentence::ttEntails(std::vector<std::string> kb, std::string alpha) {
     std::vector<std::string> symbols = this->returnSymbols(kb, alpha);
+    for (int count = 0; count < symbols.size(); count++) {
+        std::cout << symbols[count] << std::endl;
+    }
     std::map<std::string, bool> substitution;
-    return ttCheckAll(kb, alpha, symbols, substitution);
+    return this->ttCheckAll(kb, alpha, symbols, substitution);
 }
 
 // tt_check_all(kb, alpha, prop_symbols(kb & alpha), {})
 bool LogicSentence::ttCheckAll(std::vector<std::string> kb, std::string alpha, std::vector<std::string> symbols, std::map<std::string, bool> substitution) {
     bool result;
     if (symbols.size() == 0) {
+//        std::cout << "Truth\n";
+//        std::cout << "Truth: " << this->plTrue(kb, substitution) << std::endl;
         if (this->plTrue(kb, substitution)) {
             std::vector<std::string> alphaHolder;
             alphaHolder.push_back(alpha);
+            std::cout << "Alpha Holder: " << alpha << std::endl;
             result = this->plTrue(alphaHolder, substitution);
+            
             return result;
         } else {
             return true;
@@ -458,25 +469,32 @@ bool LogicSentence::ttCheckAll(std::vector<std::string> kb, std::string alpha, s
 // Solve the kb.
 bool LogicSentence::plTrue(std::vector<std::string> kb, std::map<std::string, bool> sub) {
     // Get the sentences from the knowledge base.
-    bool holder;
+    bool holder = false;
     std::vector<bool> andBool;
     std::string kbRelation;
     std::vector<std::string> parsable;
     std::vector<std::string> postFix;
+    
     for (int count = 0; count < kb.size(); count++) {
         kbRelation = kb[count];
         parsable = this->prepForParse(kbRelation);
         postFix = this->postfix(parsable);
         holder = this->solveExpression(postFix, sub);
+        if (kbRelation == "~{P0,1}") {
+            std::cout << "Truth value: " << holder << std::endl;
+        }
         andBool.push_back(holder);
     }
     
-    holder = true;
-    for (int count = 0; count < andBool.size(); count++) {
-        holder = (holder && andBool[count]);
+    if (andBool.size() != 0) {
+        holder = andBool[0];
+        for (int count = 1; count < andBool.size(); count++) {
+            holder = (holder && andBool[count]);
+        }
+        return holder;
+    } else {
+        return holder;
     }
-    
-    return holder;
 }
 
 

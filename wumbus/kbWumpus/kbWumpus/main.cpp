@@ -57,13 +57,19 @@ int main(int argc, const char * argv[]) {
     std::cout << implyFunc("Q", orLit) << std::endl;
     std::cout << iffFunc("Q12", orLit) << std::endl;
     
-    std::vector<std::string> alk = prepForParse("~Q12");
+    std::vector<std::string> alk = prepForParse("{Q1,2}");
+    for (int count = 0; count < alk.size(); count++) {
+        std::cout << "Hey: " << alk[count] << std::endl;
+    }
     std::vector<std::string> walk = postfix(alk);
+    for (int count = 0; count < walk.size(); count++) {
+        std::cout << "Hey: " << walk[count] << std::endl;
+    }
     std::map<std::string, bool> symbols = {
         {"Q12", true},
         {"A11", false},
-        {"B12", false},
-        {"C21", false},
+        {"B12", true},
+        {"C21", true},
     };
     
     std::vector<std::string> prepareFor;
@@ -80,6 +86,11 @@ int main(int argc, const char * argv[]) {
     for (int count = 0; count < walk.size(); count++) {
         std::cout << walk[count] << std::endl;
     }
+    std::vector<std::string> knowledgeBase;
+    knowledgeBase.push_back("Q12");
+    knowledgeBase.push_back(iff);
+    std::cout << ttEntails(knowledgeBase, "Q12") << std::endl;
+    std::cout << "Truth: " << plTrue(knowledgeBase, symbols) << std::endl;
     
     return 0;
 }

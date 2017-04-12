@@ -27,14 +27,24 @@ int main(int argc, const char * argv[]) {
 //    }
     Agent person = Agent();
     World game = World();
-    State currentState = game.returnState(person.returnLocation());
+//    person.returnLocation()
+    State currentState = game.returnState(std::pair<int, int>(1,1));
     person.setVisited();
     // Get the status of the state. Before you put it into the the KB.
+    std::vector<std::string> background = currentState.returnBackgroundKnowledge();
+    person.tell(background);
     currentState.setStatus();
-    std::vector<std::string> sturn = currentState.returnQueryKnowledge();
-    for (int count = 0; count < sturn.size(); count++) {
-        std::cout << sturn[count] << std::endl;
+    std::vector<std::string> query = currentState.returnQueryKnowledge();
+    person.tell(query);
+    std::vector<std::string> hey = person.returnKB();
+    for (int count = 0; count < hey.size(); count++) {
+        std::cout << "Relation: " << hey[count] << std::endl;
     }
+    std::cout << "Pit Exists?: " << person.ask("~{P0,1}") << std::endl;
+    game.printWorld();
+//    for (int count = 0; count < sturn.size(); count++) {
+//        std::cout << sturn[count] << std::endl;
+//    }
 //    currentState.setBreeze();
 //    currentState.setGlitter();
 //    currentState.setPit();

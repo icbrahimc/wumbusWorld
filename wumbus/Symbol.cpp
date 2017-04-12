@@ -25,7 +25,7 @@ std::string Symbol::returnStringValue() {
             return "{S" + intToString(location.first) + "," + intToString(location.second) + "}";
             break;
         case 4:
-            return "{W" + intToString(location.first) + "," + intToString(location.second) + "}";
+            return "{W" + intToString(location.first) + ", " + intToString(location.second) + "}";
             break;
             
         default:
