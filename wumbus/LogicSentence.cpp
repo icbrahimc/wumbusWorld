@@ -144,12 +144,8 @@ std::vector<std::string> LogicSentence::extract_keys(std::map<std::string, bool>
 
 std::vector<std::string> LogicSentence::prepForParse(std::string parse) {
     // Eliminate spaces.
-    std::string parseString = std::string();
-    for (int count = 0; count < parse.size(); count++) {
-        if (!this->isSpace(parse[count])) {
-            parseString += parse[count];
-        }
-    }
+    std::string parseString = this->removeSpaces(parse);
+    std::cout << "Parse String: " << parseString << std::endl;
     std::string inputString = std::string();
     
     std::vector<std::string> good;
@@ -179,6 +175,7 @@ std::vector<std::string> LogicSentence::prepForParse(std::string parse) {
         }
         
     }
+    
     return good;
 }
 
@@ -371,3 +368,55 @@ bool LogicSentence::solveExpression(std::vector<std::string> postFix, std::map<s
     return solutionStack[0];
 }
 
+// Returns the tautology sentence given a particular percept, location, and adjacent locations.
+std::string LogicSentence::returnPerceptTautology(int percept, std::pair<int, int> stateLocation, std::vector<std::pair<int, int>> adjLocations) {
+    int breeze = 0;
+    int glitter = 1;
+    int pit = 2;
+    int stench = 3;
+    int wumpus = 4;
+    
+    std::string tautologyHolder;
+    std::string combinationHolder;
+    std::string firstLiteralHolder;
+    
+    Symbol stateSymbol = Symbol(percept, stateLocation);
+    std::vector<Symbol> symbolArray;
+    std::vector<std::string> stringArray;
+    
+    switch (percept) {
+        case 0:
+            for (int i = 0; i < adjLocations.size(); i++) {
+                symbolArray.push_back(Symbol(pit, adjLocations[i]));
+            }
+            
+            firstLiteralHolder = symbolArray[0].returnStringValue();
+            for (int j = 1; j < symbolArray.size(); j++) {
+                stringArray.push_back(symbolArray[j].returnStringValue());
+            }
+            
+            combinationHolder = this->orFunc(firstLiteralHolder, stringArray);
+            tautologyHolder = this->iffFunc(stateSymbol.returnStringValue(), combinationHolder);
+            break;
+            
+        case 3:
+            for (int i = 0; i < adjLocations.size(); i++) {
+                symbolArray.push_back(Symbol(wumpus, adjLocations[i]));
+            }
+            
+            firstLiteralHolder = symbolArray[0].returnStringValue();
+            for (int j = 1; j < symbolArray.size(); j++) {
+                stringArray.push_back(symbolArray[j].returnStringValue());
+            }
+            
+            combinationHolder = this->orFunc(firstLiteralHolder, stringArray);
+            tautologyHolder = this->iffFunc(stateSymbol.returnStringValue(), combinationHolder);
+            break;
+            
+            
+        default:
+            break;
+    }
+    
+    return tautologyHolder;
+}

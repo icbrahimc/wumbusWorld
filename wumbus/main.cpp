@@ -15,8 +15,12 @@
 
 int main(int argc, const char * argv[]) {
     LogicSentence lsHelper;
-    std::cout << lsHelper.removeSpaces("A11 + B11") << std::endl;
-    std::cout << lsHelper.isSpace(32) << std::endl;
+//    std::cout << lsHelper.removeSpaces("A11 + B11") << std::endl;
+//    std::cout << lsHelper.isSpace(32) << std::endl;
+//    std::vector<std::string> hey = lsHelper.prepForParse("(A11 & B11)");
+//    for (int count = 0; count < hey.size(); count++) {
+//        std::cout << hey[count] << std::endl;
+//    }
     Agent person = Agent();
     World game = World();
     State currentState = game.returnState(person.returnLocation());

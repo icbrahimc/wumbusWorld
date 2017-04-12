@@ -22,6 +22,7 @@ public:
     std::string orFunc(std::string, std::vector<std::string>);
     std::string implyFunc(std::string, std::string);
     std::string iffFunc(std::string, std::string);
+    std::string returnPerceptTautology(int, std::pair<int, int>, std::vector<std::pair<int, int>>);
     
     // Helper functions. Such as string and map manipulators.
     std::vector<std::string> prepForParse(std::string);
