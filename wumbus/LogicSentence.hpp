@@ -14,6 +14,13 @@
 #include "Symbol.hpp"
 #include <vector>
 
+// Stuff for the knowledge base.
+std::string notFunc(std::string);
+std::string andFunc(std::string, std::vector<std::string>);
+std::string orFunc(std::string, std::vector<std::string>);
+std::string implyFunc(std::string, std::string);
+std::string iffFunc(std::string, std::string);
+
 class LogicSentence {
 private:
     std::string sentenceRep;
