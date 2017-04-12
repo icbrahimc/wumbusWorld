@@ -10,7 +10,7 @@
 #define KnowledgeBase_hpp
 
 //#include "Sentence.hpp"
-#include "LogicSentence.hpp"
+//#include "LogicSentence.hpp"
 #include "Symbol.hpp"
 #include <stdio.h>
 #include <map>

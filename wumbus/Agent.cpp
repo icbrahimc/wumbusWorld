@@ -8,11 +8,7 @@
 
 #include "Agent.hpp"
 
-std::string notFunc(std::string);
-std::string andFunc(std::string, std::vector<std::string>);
-std::string orFunc(std::string, std::vector<std::string>);
-std::string implyFunc(std::string, std::string);
-std::string iffFunc(std::string, std::string);
+
 
 // Set the adjacency pairs for the particular agent in at a coordinate.
 void Agent::setAdjacency() {
@@ -101,54 +97,4 @@ void Agent::setVisited() {
     visited.insert(std::pair<std::pair<int, int>, bool>(location, true));
 }
 
-void Agent::tellBreezeSentence() {
-    Symbol sym = Symbol(0, location);
-    std::string symString = sym.returnStringValue();
-    // Insert the value into the subsititution map if it does not exist.
-    // If the percept is false.
-    if (agentPercepts[0] == false) {
-        symString = notFunc(symString);
-    } else {
-        
-    }
-}
 
-std::string notFunc(std::string input) {
-    return "~" + input;
-}
-
-std::string andFunc(std::string firstLiteral, std::vector<std::string> multiple) {
-    if (multiple.size() == 1) {
-        return firstLiteral + " & " + multiple[0];
-    } else {
-        std::string newSentence = "(" + firstLiteral;
-        for(int count = 0; count < multiple.size(); count++) {
-            newSentence += " & " + multiple[count];
-        }
-        newSentence += ")";
-        return newSentence;
-    }
-}
-
-std::string orFunc(std::string firstLiteral, std::vector<std::string> multiple) {
-    if (multiple.size() == 1) {
-        return firstLiteral + " | " + multiple[0];
-    } else {
-        std::string newSentence = "(" + firstLiteral;
-        for(int count = 0; count < multiple.size(); count++) {
-            newSentence += " | " + multiple[count];
-        }
-        newSentence += ")";
-        return newSentence;
-    }
-}
-
-std::string implyFunc(std::string firstLiteral, std::string secondLiteral) {
-    return "(" + firstLiteral + " > " + secondLiteral + ")";
-}
-
-std::string iffFunc(std::string firstLiteral, std::string secondLiteral) {
-    std::string first = implyFunc(firstLiteral, secondLiteral);
-    std::string second = implyFunc(secondLiteral, firstLiteral);
-    return "(" + first + " & " + second + ")";
-}

@@ -14,6 +14,7 @@
 #include <iostream>
 
 int main(int argc, const char * argv[]) {
+    otFunc("Ibrahim");
     Agent person = Agent();
     World game = World();
     State currentState = game.returnState(person.returnLocation());

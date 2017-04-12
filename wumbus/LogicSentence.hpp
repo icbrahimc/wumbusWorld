@@ -14,32 +14,62 @@
 #include "Symbol.hpp"
 #include <vector>
 
-// Stuff for the knowledge base.
-std::string notFunc(std::string);
-std::string andFunc(std::string, std::vector<std::string>);
-std::string orFunc(std::string, std::vector<std::string>);
-std::string implyFunc(std::string, std::string);
-std::string iffFunc(std::string, std::string);
+
+
+//// Return the string with the not indicator.
+//std::string otFunc(std::string input) {
+//    return "~" + input;
+//}
+
+//// Return the and logic sentence.
+//std::string andFunc(std::string firstLiteral, std::vector<std::string> multiple) {
+//    if (multiple.size() == 1) {
+//        return firstLiteral + " & " + multiple[0];
+//    } else {
+//        std::string newSentence = "(" + firstLiteral;
+//        for(int count = 0; count < multiple.size(); count++) {
+//            newSentence += " & " + multiple[count];
+//        }
+//        newSentence += ")";
+//        return newSentence;
+//    }
+//}
+//
+//// Return thhe or logic sentence.
+//std::string orFunc(std::string firstLiteral, std::vector<std::string> multiple) {
+//    if (multiple.size() == 1) {
+//        return firstLiteral + " | " + multiple[0];
+//    } else {
+//        std::string newSentence = "(" + firstLiteral;
+//        for(int count = 0; count < multiple.size(); count++) {
+//            newSentence += " | " + multiple[count];
+//        }
+//        newSentence += ")";
+//        return newSentence;
+//    }
+//}
+//
+//// Return the imply logic sentence.
+//std::string implyFunc(std::string firstLiteral, std::string secondLiteral) {
+//    return "(" + firstLiteral + " > " + secondLiteral + ")";
+//}
+//
+//// Return the iff logic sentence.
+//std::string iffFunc(std::string firstLiteral, std::string secondLiteral) {
+//    std::string first = implyFunc(firstLiteral, secondLiteral);
+//    std::string second = implyFunc(secondLiteral, firstLiteral);
+//    return first + " & " + second;
+//}
+
 
 class LogicSentence {
-private:
-    std::string sentenceRep;
-    bool truthValue;
 public:
-    // Constructor
-    LogicSentence(Symbol literal) {
-        sentenceRep = literal.returnStringValue();
-    };
-    
-    // Getters.
-    std::string returnSentence() { return sentenceRep; };
-    bool returnTruthValue() { return truthValue; };
-    
-    // Setters.
-    void setNot();
-    void setAnd(Symbol);
-    void setOr(Symbol);
-    void setImplies(Symbol);
+    // Stuff for the knowledge base.
+    std::string notFunc(std::string);
+    std::string andFunc(std::string, std::vector<std::string>);
+    std::string orFunc(std::string, std::vector<std::string>);
+    std::string implyFunc(std::string, std::string);
+    std::string iffFunc(std::string, std::string);
 //    void set
 
 };
