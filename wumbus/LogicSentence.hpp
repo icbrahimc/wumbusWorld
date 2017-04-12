@@ -24,13 +24,20 @@ public:
     std::string iffFunc(std::string, std::string);
     
     // Helper functions. Such as string and map manipulators.
+    std::vector<std::string> prepForParse(std::string);
+    std::vector<std::string> postfix(std::vector<std::string>);
     std::vector<std::string> returnSplitVector(std::vector<std::string>);
     std::vector<std::string> returnSymbols(std::vector<std::string>, std::string);
     std::string removeSpaces(std::string);
     std::vector<std::string> extract_keys(std::map<std::string, bool> const&);
+    
+    // Booleans for the logic sentences.
     bool isValidValue(char);
     bool isParenValue(char);
     bool isSpace(char);
+    bool higherPrecedence(std::string, std::string);
+    bool solveExpression(std::vector<std::string>, std::map<std::string, bool>);
+    bool solveBoolean(bool, bool, char);
 //    void set
 
 };

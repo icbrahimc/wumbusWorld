@@ -126,7 +126,7 @@ std::vector<std::string> LogicSentence::returnSymbols(std::vector<std::string> l
 std::string LogicSentence::removeSpaces(std::string input) {
     std::string newString = std::string();
     for (int count = 0; count < input.size(); count++) {
-        if (this->isSpace(input[count])) {
+        if (!this->isSpace(input[count])) {
             newString += input[count];
         }
     }
