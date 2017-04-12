@@ -24,6 +24,11 @@ public:
     std::string iffFunc(std::string, std::string);
     std::string returnPerceptTautology(int, std::pair<int, int>, std::vector<std::pair<int, int>>);
     
+    // Truth table algorithms.
+    bool plTrue(std::vector<std::string>, std::map<std::string, bool>);
+    bool ttEntails(std::vector<std::string>, std::string);
+    bool ttCheckAll(std::vector<std::string>, std::string, std::vector<std::string>, std::map<std::string, bool>);
+    
     // Helper functions. Such as string and map manipulators.
     std::vector<std::string> prepForParse(std::string);
     std::vector<std::string> postfix(std::vector<std::string>);

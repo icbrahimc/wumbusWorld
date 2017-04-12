@@ -424,3 +424,60 @@ std::string LogicSentence::returnPerceptTautology(int percept, std::pair<int, in
     
     return tautologyHolder;
 }
+
+// Truth table algorithms.
+bool LogicSentence::ttEntails(std::vector<std::string> kb, std::string alpha) {
+    std::vector<std::string> symbols = this->returnSymbols(kb, alpha);
+    std::map<std::string, bool> substitution;
+    return ttCheckAll(kb, alpha, symbols, substitution);
+}
+
+// tt_check_all(kb, alpha, prop_symbols(kb & alpha), {})
+bool LogicSentence::ttCheckAll(std::vector<std::string> kb, std::string alpha, std::vector<std::string> symbols, std::map<std::string, bool> substitution) {
+    bool result;
+    if (symbols.size() == 0) {
+        if (this->plTrue(kb, substitution)) {
+            std::vector<std::string> alphaHolder;
+            alphaHolder.push_back(alpha);
+            result = this->plTrue(alphaHolder, substitution);
+            return result;
+        } else {
+            return true;
+        }
+    } else {
+        std::string insertor = symbols[0];
+        symbols = this->returnSplitVector(symbols);
+        std::map<std::string, bool> trueMap = substitution;
+        std::map<std::string, bool> falseMap = substitution;
+        trueMap.insert(std::pair<std::string, bool>(insertor, true));
+        falseMap.insert(std::pair<std::string, bool>(insertor, false));
+        return (this->ttCheckAll(kb, alpha, symbols, trueMap) && this->ttCheckAll(kb, alpha, symbols, falseMap));
+    }
+}
+
+// Solve the kb.
+bool LogicSentence::plTrue(std::vector<std::string> kb, std::map<std::string, bool> sub) {
+    // Get the sentences from the knowledge base.
+    bool holder;
+    std::vector<bool> andBool;
+    std::string kbRelation;
+    std::vector<std::string> parsable;
+    std::vector<std::string> postFix;
+    for (int count = 0; count < kb.size(); count++) {
+        kbRelation = kb[count];
+        parsable = this->prepForParse(kbRelation);
+        postFix = this->postfix(parsable);
+        holder = this->solveExpression(postFix, sub);
+        andBool.push_back(holder);
+    }
+    
+    holder = true;
+    for (int count = 0; count < andBool.size(); count++) {
+        holder = (holder && andBool[count]);
+    }
+    
+    return holder;
+}
+
+
+

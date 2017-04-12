@@ -73,7 +73,7 @@ int main(int argc, const char * argv[]) {
 //    agent.turnAgent();
 //    agent.turnAgent();
 //    agent.turnAgent();
-    World wumpus = World();
-    wumpus.printWorld();
+//    World wumpus = World();
+//    wumpus.printWorld();
     return 0;
 }
