@@ -23,6 +23,7 @@ public:
     std::string implyFunc(std::string, std::string);
     std::string iffFunc(std::string, std::string);
     std::string returnPerceptTautology(int, std::pair<int, int>, std::vector<std::pair<int, int>>);
+    std::vector<std::string> returnSymbols(int, std::vector<std::pair<int,int>>);
     
     // Truth table algorithms.
     bool plTrue(std::vector<std::string>, std::map<std::string, bool>);

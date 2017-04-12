@@ -15,6 +15,8 @@
 
 int main(int argc, const char * argv[]) {
     LogicSentence lsHelper;
+    std::vector<std::string> background;
+    std::vector<std::string> query;
 //    std::vector<std::pair<int, int>> yuh;
 //    yuh.push_back(std::pair<int, int>(1,1));
 //    yuh.push_back(std::pair<int, int>(0,1));
@@ -27,63 +29,56 @@ int main(int argc, const char * argv[]) {
 //    }
     Agent person = Agent();
     World game = World();
+    do {
+        // Get the state that the player is in.
+        State currentState = game.returnState(person.returnLocation());
+        person.setVisited();
+        
+        // Set the background knowledge.
+        background = currentState.returnBackgroundKnowledge();
+        person.tell(background);
+        
+        // Set status of the state and add the query to the knowledge base.
+        currentState.setStatus();
+        query = currentState.returnQueryKnowledge();
+        person.tell(query);
+        
+        // If there is a wumpus, end the game.
+        if (currentState.isWumpus()) {
+            std::cout << "Game over!\n";
+            std::cout << "Wumpus Eats!\n";
+            break;
+        }
+        
+        // If there is a pit, end the game.
+        if (currentState.isPit()) {
+            std::cout << "Game over!\n";
+            std::cout << "You fall down the pit!\n";
+            break;
+        }
+        
+        if (currentState.isGlitter()) {
+            std::cout << "Game over!\n";
+            std::cout << "You won the game!\n";
+            break;
+        }
+        
+        if (currentState.isBreeze()) {
+            
+        }
+        
+    } while (!person.returnGlitter());
 //    person.returnLocation()
     State currentState = game.returnState(person.returnLocation());
     person.setVisited();
     // Get the status of the state. Before you put it into the the KB.
-    std::vector<std::string> background = currentState.returnBackgroundKnowledge();
+   
     person.tell(background);
     currentState.setStatus();
-    std::vector<std::string> query = currentState.returnQueryKnowledge();
     person.tell(query);
-    std::vector<std::string> hey = person.returnKB();
-    for (int count = 0; count < hey.size(); count++) {
-        std::cout << "Relation: " << hey[count] << std::endl;
-    }
     std::cout << "Pit Exists?: " << person.ask("{W2,0}") << std::endl;
     game.printWorld();
-//    for (int count = 0; count < sturn.size(); count++) {
-//        std::cout << sturn[count] << std::endl;
-//    }
-//    currentState.setBreeze();
-//    currentState.setGlitter();
-//    currentState.setPit();
-//    currentState.setStench();
-//    currentState.setWumpus();
-    
-    // Pass the percepts to the agent to create the logic sentences.
-//    person.setPercepts(currentState.returnPercepts());
-//    person.setAdjacency();
-//    Symbol sym = Symbol(0, std::pair<int, int>(0, 0));
-//    Symbol sym1 = Symbol(2, std::pair<int, int>(1, 0));
-//    Symbol sym2 = Symbol(2, std::pair<int, int>(0, 1));
-//    Symbol symLit[3] = {
-//        sym, sym1, sym2
-//    };
-//    
-//    for (int count = 0; count < 3; count++) {
-//        <#statements#>
-//    }
-//    LogicSentence log = LogicSentence(sym);
-//    log.setImplies(sym1);
-//    log.setOr(sym2);
-////    log.setAnd(sym1);
-////    log.setImplies(sym2);
-////    log.setNot();
-//    std::cout << log.returnSentence() << std::endl;
-    Agent agent = Agent();
-    std::cout << agent.returnLocation().first << ", " << agent.returnLocation().second << std::endl;
-    
-    agent.setAdjacency();
-    //Sentence sen = Sentence();
-    
-//    std::cout << sym.returnStringValue() << std::endl;
-//    agent.setLocation(1, 1);
-//    agent.setAdjacency();
-//    agent.turnAgent();
-//    agent.turnAgent();
-//    agent.turnAgent();
-//    World wumpus = World();
-//    wumpus.printWorld();
+
+
     return 0;
 }

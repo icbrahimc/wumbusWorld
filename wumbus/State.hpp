@@ -21,6 +21,8 @@ private:
     bool safe;
     std::vector<std::pair<int, int>> adjacency;
     std::pair<int, int> location;
+    std::vector<std::string> possiblePits;
+    std::vector<std::string> possibleWumpus;
     std::vector<std::string> backgroundKnowledge;
     std::vector<std::string> queryKnowledge;
     

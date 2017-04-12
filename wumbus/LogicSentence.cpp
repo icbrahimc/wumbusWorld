@@ -497,5 +497,31 @@ bool LogicSentence::plTrue(std::vector<std::string> kb, std::map<std::string, bo
     }
 }
 
+// Return a list of symbols pertaining to the symbol.
+std::vector<std::string> returnSymbols(int percept, std::vector<std::pair<int,int>> setOfPairs) {
+    int symbolPercept = 0;
+    switch (percept) {
+        case 0:
+            symbolPercept = 2;
+            break;
+            
+        case 3:
+            symbolPercept = 4;
+            break;
+            
+        default:
+            break;
+    }
+    
+    std::vector<std::string> symbolVector;
+    Symbol newSymbol = Symbol(0, std::pair<int, int>(0, 0));
+    for (int i = 0; i < setOfPairs.size(); i++) {
+        newSymbol = Symbol(symbolPercept, setOfPairs[i]);
+        symbolVector.push_back(newSymbol.returnStringValue());
+    }
+    
+    return symbolVector;
+}
+
 
 

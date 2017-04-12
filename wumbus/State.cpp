@@ -102,6 +102,7 @@ void State::setAdjacency() {
 
 // Set the location of the state, then call set adajaceny to establish adjacent pieces.
 void State::setBackground(int first, int last) {
+    Symbol sym = Symbol(0, std::pair<int, int>(0,0));
     LogicSentence ls;
     location = std::pair<int, int>(first, last);
     this->setAdjacency();
@@ -113,8 +114,11 @@ void State::setBackground(int first, int last) {
     backgroundKnowledge.push_back(breezeTautology);
     backgroundKnowledge.push_back(stenchTautology);
     
-//    for (int count = 0; count < backgroundKnowledge.size(); count++) {
-//        std::cout << "Background: " << backgroundKnowledge[count] << std::endl;
+    // Instantitate the wumpus and pit storage vectors.
+//    for (int count = 0; count < adjacency.size(); count++) {
+//        sym = Symbol(1, location);
+//        holder = sym.returnStringValue();
+//        possiblePits.push_back();
 //    }
 }
 

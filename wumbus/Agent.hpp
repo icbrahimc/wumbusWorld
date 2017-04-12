@@ -29,15 +29,13 @@ enum direction { left = 0, right = 1, up = 2, down = 3 };
 class Agent: public KnowledgeBase {
 private:
     bool arrow;
-//  delete direction eventually. Probably don't need it.
     direction look;
     std::vector<std::pair<int, int>> adjacency;
-//    std::map<direction, std::pair<int, int>> adjacency;
     std::pair<int, int> location;
     std::vector<bool> agentPercepts;
     std::vector<std::string> kb;
     std::map<std::string, bool> subsitutions;
-//    bool agentPercepts[5];
+    bool gold;
     std::map<std::pair<int, int>, bool> visited;
     
 public:
@@ -45,6 +43,7 @@ public:
     Agent() {
         arrow = true;
         look = right;
+        gold = false;
         location = std::pair<int, int>(3, 0);
     };
     
@@ -53,6 +52,7 @@ public:
     void setLocation(int first, int last) { location = std::pair<int, int>(first, last); };
     void setAdjacency();
     void setVisited();
+    void grabGlitter(bool input) { gold = true; };
     
     // Knowledge based methods.
     void tellBreezeSentence();
@@ -60,6 +60,7 @@ public:
     // Getters.
     direction returnDirection() const { return look; };
     std::pair<int, int> returnLocation() const { return location; };
+    bool returnGlitter() { return gold; };
     
     // Agent based moves.
     void turnAgent();
