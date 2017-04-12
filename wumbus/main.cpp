@@ -26,8 +26,8 @@ int main(int argc, const char * argv[]) {
     currentState.setWumpus();
     
     // Pass the percepts to the agent to create the logic sentences.
-    person.setPercepts(currentState.returnPercepts());
-    person.setAdjacency();
+//    person.setPercepts(currentState.returnPercepts());
+//    person.setAdjacency();
 //    Symbol sym = Symbol(0, std::pair<int, int>(0, 0));
 //    Symbol sym1 = Symbol(2, std::pair<int, int>(1, 0));
 //    Symbol sym2 = Symbol(2, std::pair<int, int>(0, 1));
