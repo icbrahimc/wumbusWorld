@@ -498,7 +498,7 @@ bool LogicSentence::plTrue(std::vector<std::string> kb, std::map<std::string, bo
 }
 
 // Return a list of symbols pertaining to the symbol.
-std::vector<std::string> returnSymbols(int percept, std::vector<std::pair<int,int>> setOfPairs) {
+std::vector<std::string> LogicSentence::returnAdjSymbols(int percept, std::vector<std::pair<int,int>> setOfPairs) {
     int symbolPercept = 0;
     switch (percept) {
         case 0:
