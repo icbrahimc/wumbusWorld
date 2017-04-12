@@ -141,3 +141,233 @@ std::vector<std::string> LogicSentence::extract_keys(std::map<std::string, bool>
     return retval;
 }
 
+
+std::vector<std::string> LogicSentence::prepForParse(std::string parse) {
+    // Eliminate spaces.
+    std::string parseString = std::string();
+    for (int count = 0; count < parse.size(); count++) {
+        if (!this->isSpace(parse[count])) {
+            parseString += parse[count];
+        }
+    }
+    std::string inputString = std::string();
+    
+    std::vector<std::string> good;
+    for (int count = 0; count < parseString.size(); count++) {
+        if (this->isValidValue(parseString[count])) {
+            
+            if (inputString.size() > 0) {
+                good.push_back(inputString);
+                inputString = std::string();
+            }
+            
+            inputString += parseString[count];
+            good.push_back(inputString);
+            inputString = std::string();
+        } else if (this->isParenValue(parseString[count])) {
+            
+            if (inputString.size() > 0) {
+                good.push_back(inputString);
+                inputString = std::string();
+            }
+            
+            inputString += parseString[count];
+            good.push_back(inputString);
+            inputString = std::string();
+        } else {
+            inputString += parseString[count];
+        }
+        
+    }
+    return good;
+}
+
+std::vector<std::string> LogicSentence::postfix(std::vector<std::string> toPostFix) {
+    char parenHolder;
+    int index = 0;
+    int parenthesesBinSize;
+    int operationBinSize;
+    bool parentheses = false;
+    int lengthOfInfix = static_cast<int>(toPostFix.size());
+    
+    std::vector<std::string> postFixBin;
+    std::vector<std::string> operationBin;
+    std::vector<std::string> parenthesesBin;
+    
+    while (index < lengthOfInfix) {
+        //        std::cout << toPostFix[index] << std::endl;
+        parenHolder = toPostFix[index][0];
+        // It is an operator.
+        if (toPostFix[index].size() > 1) {
+            postFixBin.push_back(toPostFix[index]);
+            index++;
+        }
+        
+        // If it is an open parentheses.
+        else if ("(" == toPostFix[index]) {
+            parentheses = true;
+            // If the parentheses bin is not empty.
+            if (parenthesesBin.size() > 0) {
+                parenthesesBin.push_back("%");
+            }
+            
+            index++;
+        }
+        
+        // If it is an closed parentheses.
+        else if (")" == toPostFix[index]) {
+            parentheses = false;
+            index++;
+            while (parenthesesBin.size() > 0) {
+                parenthesesBinSize = static_cast<int>(parenthesesBin.size());
+                if (parenthesesBin[parenthesesBinSize - 1] == "%") {
+                    parenthesesBin.pop_back();
+                    break;
+                }
+                
+                else {
+                    postFixBin.push_back(parenthesesBin[parenthesesBinSize - 1]);
+                    parenthesesBin.pop_back();
+                }
+            }
+        }
+        
+        else if (this->isValidValue(parenHolder) && !parentheses) {
+            if (operationBin.size() == 0) {
+                operationBin.push_back(toPostFix[index]);
+                index++;
+            }
+            
+            else {
+                operationBinSize = static_cast<int>(operationBin.size());
+                if (this->higherPrecedence(toPostFix[index], operationBin[operationBinSize - 1])) {
+                    operationBin.push_back(toPostFix[index]);
+                    index++;
+                }
+                
+                else {
+                    while (operationBin.size() > 0) {
+                        postFixBin.push_back(operationBin[operationBinSize - 1]);
+                        operationBin.pop_back();
+                    }
+                    operationBin.push_back(toPostFix[index]);
+                    index++;
+                }
+            }
+        }
+        
+        else if (this->isValidValue(parenHolder) && parentheses) {
+            if (parenthesesBin.size() == 0) {
+                parenthesesBin.push_back(toPostFix[index]);
+                index++;
+            }
+            
+            else {
+                parenthesesBinSize = static_cast<int>(parenthesesBin.size());
+                if (this->higherPrecedence(toPostFix[index], parenthesesBin[parenthesesBinSize - 1])) {
+                    parenthesesBin.push_back(toPostFix[index]);
+                    index++;
+                }
+                
+                else {
+                    parenthesesBin.push_back(toPostFix[index]);
+                    index++;
+                }
+            }
+        }
+        
+    }
+    
+    while (operationBin.size() > 0) {
+        operationBinSize = static_cast<int>(operationBin.size());
+        postFixBin.push_back(operationBin[operationBinSize - 1]);
+        operationBin.pop_back();
+    }
+    
+    return postFixBin;
+}
+
+bool LogicSentence::higherPrecedence(std::string opOne, std::string opTwo) {
+    if (opOne == "~") {
+        if (opTwo == "&" || opTwo == "|" || opTwo == ">") {
+            return true;
+        }
+    } else if (opOne == "&") {
+        if (opTwo == "|" || opTwo == ">") {
+            return true;
+        }
+    } else if (opOne == "|") {
+        if (opTwo == ">") {
+            return true;
+        }
+    } else {
+        return true;
+    }
+    return false;
+}
+
+// Solve the boolean.
+bool LogicSentence::solveBoolean(bool operOne, bool operTwo, char operation) {
+    
+    switch (operation) {
+        case '~':
+            return !operOne;
+            break;
+            
+        case '&':
+            return (operOne && operTwo);
+            break;
+            
+        case '|':
+            return (operOne || operTwo);
+            break;
+            
+        case '>':
+            if (operOne && !operTwo) {
+                return false;
+            } else {
+                return true;
+            }
+            break;
+        default:
+            break;
+    }
+    return false;
+}
+
+// Solve the postfix expression.
+bool LogicSentence::solveExpression(std::vector<std::string> postFix, std::map<std::string, bool> expressions) {
+    bool operandOne = false;
+    bool operandTwo = false;
+    bool result = false;
+    std::string dequeueElement;
+    std::vector<bool> solutionStack;
+    
+    int idx = 0;
+    while (idx < postFix.size()) {
+        dequeueElement = postFix[idx];
+        
+        // Nomenclature for the variables.
+        if (dequeueElement.size() > 1) {
+            operandOne = expressions[dequeueElement];
+            solutionStack.push_back(operandOne);
+        } else if(this->isValidValue(dequeueElement[0]) && dequeueElement != "~") {
+            operandTwo = solutionStack[solutionStack.size() - 1];
+            operandOne = solutionStack[solutionStack.size() - 2];
+            solutionStack.pop_back();
+            solutionStack.pop_back();
+            
+            result = this->solveBoolean(operandOne, operandTwo, dequeueElement[0]);
+            solutionStack.push_back(result);
+        } else if (this->isValidValue(dequeueElement[0]) && dequeueElement == "~") {
+            operandOne = solutionStack[solutionStack.size() - 1];
+            result = this->solveBoolean(operandOne, operandTwo, dequeueElement[0]);
+            solutionStack.push_back(result);
+        }
+        
+        idx++;
+    }
+    
+    return solutionStack[0];
+}
+

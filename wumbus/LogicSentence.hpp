@@ -38,8 +38,6 @@ public:
     bool higherPrecedence(std::string, std::string);
     bool solveExpression(std::vector<std::string>, std::map<std::string, bool>);
     bool solveBoolean(bool, bool, char);
-//    void set
-
 };
 #endif /* LogicSentence_hpp */
 
