@@ -41,7 +41,7 @@ void Agent::setAdjacency() {
                 continue;
             } else {
 		// Next push.
-                adjancency.push_back(std::pair<int, int>(pairDir[count]));
+                adjacency.push_back(std::pair<int, int>(pairDir[count]));
 //                adjacency.insert(std::pair<direction, std::pair<int, int>>(static_cast<direction>(count), pairDir[count]));
             }
         }

@@ -65,3 +65,46 @@ void State::setSafety() {
         safe = true;
     }
 }
+
+// Set the adjacency pairs for the particular agent in at a coordinate.
+void State::setAdjacency() {
+    // Store the coordinates in holder vars.
+    int vert = location.first;
+    int horz = location.second;
+    
+    std::pair<int, int> pairDir[4];
+    pairDir[0] = std::pair<int, int>(vert, horz - 1);
+    pairDir[1] = std::pair<int, int>(vert, horz + 1);
+    pairDir[2] = std::pair<int, int>(vert - 1, horz);
+    pairDir[3] = std::pair<int, int>(vert + 1, horz);
+    
+    //    std::pair<int, int> left = std::pair<int, int>(vert, horz - 1);
+    //    std::pair<int, int> right = std::pair<int, int>(vert, horz + 1);
+    //    std::pair<int, int> up = std::pair<int, int>(vert - 1, horz);
+    //    std::pair<int, int> down = std::pair<int, int>(vert + 1, horz);
+    
+    for (int count = 0; count < 4; count++) {
+        if (pairDir[count].first < 0 || 4 <= pairDir[count].first) {
+            continue;
+        } else if (pairDir[count].second < 0 || 4 <= pairDir[count].second) {
+            continue;
+        } else {
+            // Next push.
+            adjacency.push_back(std::pair<int, int>(pairDir[count]));
+            //                adjacency.insert(std::pair<direction, std::pair<int, int>>(static_cast<direction>(count), pairDir[count]));
+        }
+    
+    }
+    
+    //    std::cout << adjacency[up].first << ", " << adjacency[up].second << std::endl;
+    //    std::cout << adjacency[right].first << ", " << adjacency[right].second << std::endl;
+}
+
+// Set the location of the state, then call set adajaceny to establish adjacent pieces.
+void State::setBackground(int first, int last) {
+    location = std::pair<int, int>(first, last);
+    this->setAdjacency();
+    for (int count = 0; count < adjacency.size(); count++) {
+        std::cout << adjacency[count].first << ", " << adjacency[count].second << std::endl;
+    }
+}

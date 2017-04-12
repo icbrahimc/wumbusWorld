@@ -17,13 +17,8 @@
 class State {
 private:
     std::vector<bool> percepts;
-//    bool percepts[5];
     bool safe;
-//    bool breeze;
-//    bool glitter;
-//    bool pit;
-//    bool stench;
-//    bool wumpus;
+    std::vector<std::pair<int, int>> adjacency;
     std::pair<int, int> location;
     
 public:
@@ -44,7 +39,9 @@ public:
     void setStench();
     void setWumpus();
     void setLocation(int first, int second) { location = std::pair<int, int>(first, second); };
+    void setBackground(int, int);
     void setSafety();
+    void setAdjacency();
     
     // Return the status of the particular state.
     bool isBreeze() const { return this->percepts[0] == true; };
@@ -53,6 +50,8 @@ public:
     bool isStench() const { return this->percepts[3] == true; };
     bool isWumpus() const { return this->percepts[4] == true; };
     bool isSafe() const { return this->safe == true; };
+    
+    // Dealing with giving the knowledge base sentences about the state.
     
     std::vector<bool> returnPercepts() { return percepts; };
     

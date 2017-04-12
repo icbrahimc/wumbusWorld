@@ -22,7 +22,9 @@ private:
     std::vector<std::string> kBase;
 public:
     // Constructor.
-    KnowledgeBase();
+    KnowledgeBase() {
+        
+    };
     
     void tell(std::string sentence) {
         kBase.push_back(sentence);

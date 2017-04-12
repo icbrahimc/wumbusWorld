@@ -24,7 +24,7 @@ public:
         // Generate the world based upon certain criteria.
         for (int i = 0; i < 4; i++) {
             for (int j = 0; j < 4; j++) {
-                board[i][j].setLocation(i, j);
+                board[i][j].setBackground(i, j);
             }
         }
     };
