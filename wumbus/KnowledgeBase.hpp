@@ -10,7 +10,7 @@
 #define KnowledgeBase_hpp
 
 //#include "Sentence.hpp"
-//#include "LogicSentence.hpp"
+#include "LogicSentence.hpp"
 #include "Symbol.hpp"
 #include <stdio.h>
 #include <map>
@@ -28,6 +28,12 @@ public:
         kBase.push_back(sentence);
     };
     
+    // Ask the knowledge base if the knowledge base entails the sentence.
+    bool ask(std::string sentence) {
+        LogicSentence ls;
+        return ls.ttEntails(kBase, sentence);
+        
+    };
     
 };
 
