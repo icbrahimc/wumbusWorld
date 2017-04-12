@@ -28,12 +28,12 @@ bool solveExpression(std::vector<std::string>, std::map<std::string, bool>);
 bool solveBoolean(bool, bool, char);
 bool ttEntails(std::vector<std::string>, std::string);
 bool ttCheckAll(std::vector<std::string>, std::string, std::vector<std::string>, std::map<std::string, bool>);
+
+// Helper functions for the code.
 std::vector<std::string> returnSplitVector(std::vector<std::string>);
 std::vector<std::string> returnSymbols(std::vector<std::string>, std::string);
 std::string removeSpaces(std::string);
 std::vector<std::string> extract_keys(std::map<std::string, bool> const&);
-// tt_check_all(kb, alpha, prop_symbols(kb & alpha), {})
-
 bool isValidValue(char);
 bool isParenValue(char);
 bool isSpace(char);

@@ -27,7 +27,7 @@ std::string LogicSentence::andFunc(std::string firstLiteral, std::vector<std::st
     }
 }
 
-// Return thhe or logic sentence.
+// Return the or logic sentence.
 std::string LogicSentence::orFunc(std::string firstLiteral, std::vector<std::string> multiple) {
     if (multiple.size() == 1) {
         return firstLiteral + " | " + multiple[0];

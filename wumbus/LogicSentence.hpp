@@ -22,6 +22,15 @@ public:
     std::string orFunc(std::string, std::vector<std::string>);
     std::string implyFunc(std::string, std::string);
     std::string iffFunc(std::string, std::string);
+    
+    // Helper functions. Such as string and map manipulators.
+    std::vector<std::string> returnSplitVector(std::vector<std::string>);
+    std::vector<std::string> returnSymbols(std::vector<std::string>, std::string);
+    std::string removeSpaces(std::string);
+    std::vector<std::string> extract_keys(std::map<std::string, bool> const&);
+    bool isValidValue(char);
+    bool isParenValue(char);
+    bool isSpace(char);
 //    void set
 
 };
