@@ -19,11 +19,13 @@
 
 class KnowledgeBase {
 private:
-    std::vector<LogicSentence> kb;
+    std::vector<std::string> kBase;
 public:
     // Constructor.
-    KnowledgeBase() {
-//        Sentence s = Sentence();
+    KnowledgeBase();
+    
+    void tell(std::string sentence) {
+        kBase.push_back(sentence);
     };
     
     

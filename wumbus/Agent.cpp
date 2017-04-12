@@ -41,8 +41,8 @@ void Agent::setAdjacency() {
                 continue;
             } else {
 		// Next push.
-		// adjacency.push_back(std::pair<int, int>(pairDir[count]));
-                adjacency.insert(std::pair<direction, std::pair<int, int>>(static_cast<direction>(count), pairDir[count]));
+                adjancency.push_back(std::pair<int, int>(pairDir[count]));
+//                adjacency.insert(std::pair<direction, std::pair<int, int>>(static_cast<direction>(count), pairDir[count]));
             }
         }
     }
@@ -83,17 +83,17 @@ void Agent::turnAgent() {
 // Make a move to the next tile.
 void Agent::makeAMove(std::pair<int, int> newTile) {
     std::pair<int, int> move;
-    bool match = false;
-    do {
-        
-        if (adjacency[look].first == newTile.first && adjacency[look].second == newTile.second) {
-            std::cout << "The agent has now moved to " << newTile.first << ", " << newTile.second << std::endl;
-            match = true;
-        } else {
-            this->turnAgent();
-        }
-        
-    } while (!match);
+//    bool match = false;
+//    do {
+//        
+//        if (adjacency[look].first == newTile.first && adjacency[look].second == newTile.second) {
+//            std::cout << "The agent has now moved to " << newTile.first << ", " << newTile.second << std::endl;
+//            match = true;
+//        } else {
+//            this->turnAgent();
+//        }
+//        
+//    } while (!match);
 }
 
 // Set the location as visited in the database.

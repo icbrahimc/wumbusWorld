@@ -30,6 +30,8 @@ bool ttEntails(std::vector<std::string>, std::string);
 bool ttCheckAll(std::vector<std::string>, std::string, std::vector<std::string>, std::map<std::string, bool>);
 std::vector<std::string> returnSplitVector(std::vector<std::string>);
 std::vector<std::string> returnSymbols(std::vector<std::string>, std::string);
+std::string removeSpaces(std::string);
+std::vector<std::string> extract_keys(std::map<std::string, bool> const&);
 // tt_check_all(kb, alpha, prop_symbols(kb & alpha), {})
 
 bool isValidValue(char);
@@ -64,7 +66,17 @@ int main(int argc, const char * argv[]) {
         {"C21", false},
     };
     
-    std::cout << solveExpression(walk, symbols);
+    std::vector<std::string> prepareFor;
+    prepareFor.push_back(andLit);
+    std::vector<std::string> extracted = returnSymbols(prepareFor, "A11");
+    
+    std::cout << "Extracted: \n";
+    for (int count = 0; count < extracted.size(); count++) {
+        std::cout << extracted[count] << std::endl;
+    }
+    
+    std::cout << "Solved: \n";
+    std::cout << solveExpression(walk, symbols) << std::endl;
     for (int count = 0; count < walk.size(); count++) {
         std::cout << walk[count] << std::endl;
     }
@@ -378,7 +390,7 @@ bool solveExpression(std::vector<std::string> postFix, std::map<std::string, boo
 }
 
 bool ttEntails(std::vector<std::string> kb, std::string alpha) {
-    std::vector<std::string> symbols;
+    std::vector<std::string> symbols = returnSymbols(kb, alpha);
     std::map<std::string, bool> substitution;
     return ttCheckAll(kb, alpha, symbols, substitution);
 }
@@ -414,4 +426,68 @@ std::vector<std::string> returnSplitVector(std::vector<std::string> oldVector) {
     }
     
     return newVector;
+}
+
+std::vector<std::string> returnSymbols(std::vector<std::string> listOfExp, std::string exp) {
+    std::string symbolHolder;
+    std::string holder;
+    std::map<std::string, bool> symbolMap;
+    
+    // Collect the symbols from the list of exp.
+    for (int i = 0; i < listOfExp.size(); i++) {
+        holder = removeSpaces(listOfExp[i]);
+        for (int j = 0; j < holder.size(); j++) {
+            if (isValidValue(holder[j])) {
+                if (symbolHolder.size() > 0) {
+                    symbolMap.insert(std::pair<std::string, bool>(symbolHolder, false));
+                    symbolHolder = std::string();
+                }
+            } else if (isParenValue(holder[j])) {
+                if (symbolHolder.size() > 0) {
+                    symbolMap.insert(std::pair<std::string, bool>(symbolHolder, false));
+                    symbolHolder = std::string();
+                }
+            } else {
+                symbolHolder += holder[j];
+            }
+        }
+    }
+    
+    // Collect the symbols from the singular expression.
+    for (int j = 0; j < exp.size(); j++) {
+        if (isValidValue(exp[j])) {
+            if (symbolHolder.size() > 0) {
+                symbolMap.insert(std::pair<std::string, bool>(symbolHolder, false));
+                symbolHolder = std::string();
+            }
+        } else if (isParenValue(exp[j])) {
+            if (symbolHolder.size() > 0) {
+                symbolMap.insert(std::pair<std::string, bool>(symbolHolder, false));
+                symbolHolder = std::string();
+            }
+        } else {
+            symbolHolder += exp[j];
+        }
+    }
+    
+    return extract_keys(symbolMap);
+}
+
+std::string removeSpaces(std::string input) {
+    std::string newString = std::string();
+    for (int count = 0; count < input.size(); count++) {
+        if (!isSpace(input[count])) {
+            newString += input;
+        }
+    }
+    
+    return newString;
+}
+
+std::vector<std::string> extract_keys(std::map<std::string, bool> const& input_map) {
+    std::vector<std::string> retval;
+    for (auto const& element : input_map) {
+        retval.push_back(element.first);
+    }
+    return retval;
 }

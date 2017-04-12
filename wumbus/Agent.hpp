@@ -26,13 +26,13 @@ enum direction { left = 0, right = 1, up = 2, down = 3 };
 //  - Contains the coordinates to visited locations.
 //  - Contains the hash map for established symbols from the game.
 
-class Agent {
+class Agent: public KnowledgeBase {
 private:
     bool arrow;
 //  delete direction eventually. Probably don't need it.
     direction look;
-//  std::vector<std::pair<int, int>> adjancency;
-    std::map<direction, std::pair<int, int>> adjacency;
+    std::vector<std::pair<int, int>> adjacency;
+//    std::map<direction, std::pair<int, int>> adjacency;
     std::pair<int, int> location;
     std::vector<bool> agentPercepts;
     std::vector<std::string> kb;
