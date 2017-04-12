@@ -117,3 +117,82 @@ void State::setBackground(int first, int last) {
         std::cout << "Background: " << backgroundKnowledge[count] << std::endl;
     }
 }
+
+// Set the status based upon the percepts and instantiate the knowledge field based upon percepts.
+void State::setStatus() {
+    LogicSentence ls;
+    this->setBreeze();
+    this->setGlitter();
+    this->setPit();
+    this->setStench();
+    this->setWumpus();
+    Symbol sym = Symbol(0, std::pair<int, int>(0,0));
+    std::string holder;
+    
+    if (this->isBreeze()) {
+        sym = Symbol(0, location);
+        holder = sym.returnStringValue();
+        queryKnowledge.push_back(holder);
+    }
+    
+    if (!this->isBreeze()) {
+        sym = Symbol(0, location);
+        holder = sym.returnStringValue();
+        holder = ls.notFunc(holder);
+        queryKnowledge.push_back(sym.returnStringValue());
+    }
+    
+    if (this->isGlitter()) {
+        sym = Symbol(1, location);
+        holder = sym.returnStringValue();
+        queryKnowledge.push_back(holder);
+    }
+    
+    if (!this->isGlitter()) {
+        sym = Symbol(1, location);
+        holder = sym.returnStringValue();
+        holder = ls.notFunc(holder);
+        queryKnowledge.push_back(holder);
+    }
+    
+    if (this->isPit()) {
+        sym = Symbol(2, location);
+        holder = sym.returnStringValue();
+        queryKnowledge.push_back(holder);
+    }
+    
+    if (!this->isPit()) {
+        sym = Symbol(2, location);
+        holder = sym.returnStringValue();
+        holder = ls.notFunc(holder);
+        queryKnowledge.push_back(holder);
+    }
+    
+    if (this->isStench()) {
+        sym = Symbol(3, location);
+        holder = sym.returnStringValue();
+        queryKnowledge.push_back(holder);
+    }
+    
+    if (!this->isStench()) {
+        sym = Symbol(3, location);
+        holder = sym.returnStringValue();
+        holder = ls.notFunc(holder);
+        queryKnowledge.push_back(holder);
+    }
+    
+    if (this->isWumpus()) {
+        sym = Symbol(4, location);
+        holder = sym.returnStringValue();
+        queryKnowledge.push_back(holder);
+    }
+    
+    if (!this->isWumpus()) {
+        sym = Symbol(4, location);
+        holder = sym.returnStringValue();
+        holder = ls.notFunc(sym.returnStringValue());
+        queryKnowledge.push_back(sym.returnStringValue());
+    }
+    
+    this->setSafety();
+}

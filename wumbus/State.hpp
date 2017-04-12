@@ -22,7 +22,7 @@ private:
     std::vector<std::pair<int, int>> adjacency;
     std::pair<int, int> location;
     std::vector<std::string> backgroundKnowledge;
-    
+    std::vector<std::string> queryKnowledge;
     
 public:
     // Constructor.
@@ -44,6 +44,8 @@ public:
     void setLocation(int first, int second) { location = std::pair<int, int>(first, second); };
     void setBackground(int, int);
     void setSafety();
+    
+    void setStatus();
     void setAdjacency();
     
     // Return the status of the particular state.
@@ -53,6 +55,9 @@ public:
     bool isStench() const { return this->percepts[3] == true; };
     bool isWumpus() const { return this->percepts[4] == true; };
     bool isSafe() const { return this->safe == true; };
+    
+    std::vector<std::string> returnBackgroundKnowledge() const { return backgroundKnowledge; };
+    std::vector<std::string> returnQueryKnowledge() const { return queryKnowledge; };
     
     // Dealing with giving the knowledge base sentences about the state.
     

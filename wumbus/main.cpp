@@ -30,11 +30,16 @@ int main(int argc, const char * argv[]) {
     State currentState = game.returnState(person.returnLocation());
     person.setVisited();
     // Get the status of the state. Before you put it into the the KB.
-    currentState.setBreeze();
-    currentState.setGlitter();
-    currentState.setPit();
-    currentState.setStench();
-    currentState.setWumpus();
+    currentState.setStatus();
+    std::vector<std::string> sturn = currentState.returnQueryKnowledge();
+    for (int count = 0; count < sturn.size(); count++) {
+        std::cout << sturn[count] << std::endl;
+    }
+//    currentState.setBreeze();
+//    currentState.setGlitter();
+//    currentState.setPit();
+//    currentState.setStench();
+//    currentState.setWumpus();
     
     // Pass the percepts to the agent to create the logic sentences.
 //    person.setPercepts(currentState.returnPercepts());

@@ -13,19 +13,19 @@ std::string intToString(int);
 std::string Symbol::returnStringValue() {
     switch (literal) {
         case 0:
-            return "{B" + intToString(location.first) + ", " + intToString(location.second) + "}";
+            return "{B" + intToString(location.first) + "," + intToString(location.second) + "}";
             break;
         case 1:
-            return "{G" + intToString(location.first) + ", " + intToString(location.second) + "}";
+            return "{G" + intToString(location.first) + "," + intToString(location.second) + "}";
             break;
         case 2:
-            return "{P" + intToString(location.first) + ", " + intToString(location.second) + "}";
+            return "{P" + intToString(location.first) + "," + intToString(location.second) + "}";
             break;
         case 3:
-            return "{S" + intToString(location.first) + ", " + intToString(location.second) + "}";
+            return "{S" + intToString(location.first) + "," + intToString(location.second) + "}";
             break;
         case 4:
-            return "{W" + intToString(location.first) + ", " + intToString(location.second) + "}";
+            return "{W" + intToString(location.first) + "," + intToString(location.second) + "}";
             break;
             
         default:

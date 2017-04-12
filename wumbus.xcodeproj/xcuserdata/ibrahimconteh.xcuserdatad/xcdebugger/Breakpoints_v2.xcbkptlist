@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "wumbus/LogicSentence.cpp"
-            timestampString = "513669280.763931"
+            timestampString = "513691398.219668"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "178"
-            endingLineNumber = "178"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
             landmarkName = "LogicSentence::prepForParse(std::string parse)"
             landmarkType = "7">
          </BreakpointContent>
