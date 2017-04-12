@@ -15,7 +15,7 @@
 
 int main(int argc, const char * argv[]) {
     LogicSentence lsHelper;
-    std::cout << lsHelper.notFunc("A11") << std::endl;
+    std::cout << lsHelper.removeSpaces("A11 + B11") << std::endl;
     Agent person = Agent();
     World game = World();
     State currentState = game.returnState(person.returnLocation());
