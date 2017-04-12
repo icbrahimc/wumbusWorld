@@ -16,7 +16,7 @@ std::string LogicSentence::notFunc(std::string input) {
 // Return the and logic sentence.
 std::string LogicSentence::andFunc(std::string firstLiteral, std::vector<std::string> multiple) {
     if (multiple.size() == 1) {
-        return "(" + firstLiteral + " & " + multiple[0] + ")";
+        return firstLiteral + " & " + multiple[0];
     } else {
         std::string newSentence = "(" + firstLiteral;
         for(int count = 0; count < multiple.size(); count++) {
@@ -30,7 +30,7 @@ std::string LogicSentence::andFunc(std::string firstLiteral, std::vector<std::st
 // Return the or logic sentence.
 std::string LogicSentence::orFunc(std::string firstLiteral, std::vector<std::string> multiple) {
     if (multiple.size() == 1) {
-        return "(" + firstLiteral + " & " + multiple[0] + ")";
+        return firstLiteral + " & " + multiple[0];
     } else {
         std::string newSentence = "(" + firstLiteral;
         for(int count = 0; count < multiple.size(); count++) {

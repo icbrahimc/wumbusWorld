@@ -28,7 +28,7 @@ int main(int argc, const char * argv[]) {
     Agent person = Agent();
     World game = World();
 //    person.returnLocation()
-    State currentState = game.returnState(std::pair<int, int>(1,1));
+    State currentState = game.returnState(person.returnLocation());
     person.setVisited();
     // Get the status of the state. Before you put it into the the KB.
     std::vector<std::string> background = currentState.returnBackgroundKnowledge();
@@ -40,7 +40,7 @@ int main(int argc, const char * argv[]) {
     for (int count = 0; count < hey.size(); count++) {
         std::cout << "Relation: " << hey[count] << std::endl;
     }
-    std::cout << "Pit Exists?: " << person.ask("~{P0,1}") << std::endl;
+    std::cout << "Pit Exists?: " << person.ask("{W2,0}") << std::endl;
     game.printWorld();
 //    for (int count = 0; count < sturn.size(); count++) {
 //        std::cout << sturn[count] << std::endl;
