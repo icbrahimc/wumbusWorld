@@ -176,6 +176,10 @@ std::vector<std::string> LogicSentence::prepForParse(std::string parse) {
         
     }
     
+    if (inputString.size() > 0) {
+        good.push_back(inputString);
+    }
+    
     return good;
 }
 

@@ -57,7 +57,7 @@ int main(int argc, const char * argv[]) {
     std::cout << implyFunc("Q", orLit) << std::endl;
     std::cout << iffFunc("Q12", orLit) << std::endl;
     
-    std::vector<std::string> alk = prepForParse(iff);
+    std::vector<std::string> alk = prepForParse("~Q12");
     std::vector<std::string> walk = postfix(alk);
     std::map<std::string, bool> symbols = {
         {"Q12", true},
@@ -161,6 +161,11 @@ std::vector<std::string> prepForParse(std::string parse) {
         }
         
     }
+    
+    if (inputString.size() > 0) {
+        good.push_back(inputString);
+    }
+    
     return good;
 }
 
@@ -329,6 +334,9 @@ bool solveBoolean(bool operOne, bool operTwo, char operation) {
     
     switch (operation) {
         case '~':
+//            if (operOne) {
+//                return false;
+//            }
             return !operOne;
             break;
             
@@ -380,7 +388,7 @@ bool solveExpression(std::vector<std::string> postFix, std::map<std::string, boo
         } else if (isValidValue(dequeueElement[0]) && dequeueElement == "~") {
             operandOne = solutionStack[solutionStack.size() - 1];
             result = solveBoolean(operandOne, operandTwo, dequeueElement[0]);
-            solutionStack.push_back(result);
+            return result;
         }
         
         idx++;

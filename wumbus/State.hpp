@@ -23,6 +23,7 @@ private:
     std::pair<int, int> location;
     std::vector<std::string> backgroundKnowledge;
     
+    
 public:
     // Constructor.
     State() {
