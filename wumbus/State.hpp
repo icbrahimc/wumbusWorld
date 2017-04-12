@@ -61,6 +61,8 @@ public:
     std::vector<std::string> returnBackgroundKnowledge() const { return backgroundKnowledge; };
     std::vector<std::string> returnQueryKnowledge() const { return queryKnowledge; };
     
+    std::vector<std::string> returnPossiblePits() const { return possiblePits; };
+    std::vector<std::string> returnPossibleWumpus() const { return possibleWumpus; };
     // Dealing with giving the knowledge base sentences about the state.
     
     std::vector<bool> returnPercepts() { return percepts; };

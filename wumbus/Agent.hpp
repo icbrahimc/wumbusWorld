@@ -54,13 +54,11 @@ public:
     void setVisited();
     void grabGlitter(bool input) { gold = true; };
     
-    // Knowledge based methods.
-    void tellBreezeSentence();
-    
     // Getters.
     direction returnDirection() const { return look; };
     std::pair<int, int> returnLocation() const { return location; };
     bool returnGlitter() { return gold; };
+    bool returnVisit(std::pair<int, int> loc) { return visited[loc]; };
     
     // Agent based moves.
     void turnAgent();

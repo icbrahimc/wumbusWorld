@@ -78,18 +78,9 @@ void Agent::turnAgent() {
 
 // Make a move to the next tile.
 void Agent::makeAMove(std::pair<int, int> newTile) {
-    std::pair<int, int> move;
-//    bool match = false;
-//    do {
-//        
-//        if (adjacency[look].first == newTile.first && adjacency[look].second == newTile.second) {
-//            std::cout << "The agent has now moved to " << newTile.first << ", " << newTile.second << std::endl;
-//            match = true;
-//        } else {
-//            this->turnAgent();
-//        }
-//        
-//    } while (!match);
+    std::cout << "The agent is moving from " << location.first << ", " << location.second << std::endl;
+    std::cout << "To " << newTile.first << ", " << newTile.second << std::endl;
+    location = newTile;
 }
 
 // Set the location as visited in the database.

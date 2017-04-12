@@ -16,7 +16,7 @@ std::string LogicSentence::notFunc(std::string input) {
 // Return the and logic sentence.
 std::string LogicSentence::andFunc(std::string firstLiteral, std::vector<std::string> multiple) {
     if (multiple.size() == 1) {
-        return firstLiteral + " & " + multiple[0];
+        return "(" + firstLiteral + " & " + multiple[0] + ")";
     } else {
         std::string newSentence = "(" + firstLiteral;
         for(int count = 0; count < multiple.size(); count++) {
@@ -30,7 +30,7 @@ std::string LogicSentence::andFunc(std::string firstLiteral, std::vector<std::st
 // Return the or logic sentence.
 std::string LogicSentence::orFunc(std::string firstLiteral, std::vector<std::string> multiple) {
     if (multiple.size() == 1) {
-        return firstLiteral + " & " + multiple[0];
+        return "(" + firstLiteral + " & " + multiple[0] + ")";
     } else {
         std::string newSentence = "(" + firstLiteral;
         for(int count = 0; count < multiple.size(); count++) {
@@ -432,9 +432,6 @@ std::string LogicSentence::returnPerceptTautology(int percept, std::pair<int, in
 // Truth table algorithms.
 bool LogicSentence::ttEntails(std::vector<std::string> kb, std::string alpha) {
     std::vector<std::string> symbols = this->returnSymbols(kb, alpha);
-    for (int count = 0; count < symbols.size(); count++) {
-        std::cout << symbols[count] << std::endl;
-    }
     std::map<std::string, bool> substitution;
     return this->ttCheckAll(kb, alpha, symbols, substitution);
 }
@@ -448,7 +445,7 @@ bool LogicSentence::ttCheckAll(std::vector<std::string> kb, std::string alpha, s
         if (this->plTrue(kb, substitution)) {
             std::vector<std::string> alphaHolder;
             alphaHolder.push_back(alpha);
-            std::cout << "Alpha Holder: " << alpha << std::endl;
+//            std::cout << "Alpha Holder: " << alpha << std::endl;
             result = this->plTrue(alphaHolder, substitution);
             
             return result;
@@ -480,9 +477,6 @@ bool LogicSentence::plTrue(std::vector<std::string> kb, std::map<std::string, bo
         parsable = this->prepForParse(kbRelation);
         postFix = this->postfix(parsable);
         holder = this->solveExpression(postFix, sub);
-        if (kbRelation == "~{P0,1}") {
-            std::cout << "Truth value: " << holder << std::endl;
-        }
         andBool.push_back(holder);
     }
     
@@ -523,5 +517,47 @@ std::vector<std::string> LogicSentence::returnAdjSymbols(int percept, std::vecto
     return symbolVector;
 }
 
+// Parse the symbols for their coordinates.
+std::pair<int, int> LogicSentence::parseSymbol(std::string input) {
+    std::vector<int> parse;
+    std::pair<int, int> loc;
+    
+    for (int count = 0; count < input.size(); count++) {
+        if (48 <= input[count] && input[count] <= 53) {
+            parse.push_back(this->convertToInt(input[count]));
+        }
+    }
+    
+    loc.first = parse[0];
+    loc.second = parse[1];
+    
+    return loc;
+}
 
+int LogicSentence::convertToInt(char num) {
+    switch (num) {
+        case '0':
+            return 0;
+            break;
+            
+        case '1':
+            return 1;
+            break;
+        
+        case '2':
+            return 2;
+            break;
+            
+        case '3':
+            return 3;
+            break;
+        
+        case '4':
+            return 4;
+            
+        default:
+            return 0;
+            break;
+    }
+}
 

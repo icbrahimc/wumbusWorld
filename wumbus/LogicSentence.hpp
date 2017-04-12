@@ -22,8 +22,7 @@ public:
     std::string orFunc(std::string, std::vector<std::string>);
     std::string implyFunc(std::string, std::string);
     std::string iffFunc(std::string, std::string);
-    std::string returnPerceptTautology(int, std::pair<int, int>, std::vector<std::pair<int, int>>);
-    std::vector<std::string> returnAdjSymbols(int, std::vector<std::pair<int,int>>);
+    
     
     // Truth table algorithms.
     bool plTrue(std::vector<std::string>, std::map<std::string, bool>);
@@ -37,6 +36,10 @@ public:
     std::vector<std::string> returnSymbols(std::vector<std::string>, std::string);
     std::string removeSpaces(std::string);
     std::vector<std::string> extract_keys(std::map<std::string, bool> const&);
+    std::string returnPerceptTautology(int, std::pair<int, int>, std::vector<std::pair<int, int>>);
+    std::vector<std::string> returnAdjSymbols(int, std::vector<std::pair<int,int>>);
+    std::pair<int, int> parseSymbol(std::string);
+    int convertToInt(char);
     
     // Booleans for the logic sentences.
     bool isValidValue(char);
@@ -47,45 +50,3 @@ public:
     bool solveBoolean(bool, bool, char);
 };
 #endif /* LogicSentence_hpp */
-
-
-
-////
-////  Sentence.hpp
-////  wumbus
-////
-////  Created by Ibrahim Conteh on 4/6/17.
-////  Copyright © 2017 Ibrahim Conteh. All rights reserved.
-////
-//
-//#ifndef Sentence_hpp
-//#define Sentence_hpp
-//
-//#include <stdio.h>
-//#include <string>
-//#include <map>
-//#include "Symbol.hpp"
-//
-//
-//// Sentence class.
-////  Logic sentence is the symbols with the connectives.
-////  Truth Value is the value of the atomic sentence.
-//
-//class Sentence {
-//private:
-//    std::string logicSentence;
-//    bool truthValue;
-//public:
-//    // Constructor
-//    Sentence();
-//
-//    // Getters.
-//    std::string returnSentence() { return logicSentence; };
-//    bool returnTruthValue() { return truthValue; };
-//
-//    // Setters.
-//    void determineTruthValue(std::map<std::string, Symbol>);
-//    void writeIFFSentence(Symbol, std::vector<Symbol>);
-//};
-//
-//#endif /* Sentence_hpp */

@@ -17,6 +17,20 @@ int main(int argc, const char * argv[]) {
     LogicSentence lsHelper;
     std::vector<std::string> background;
     std::vector<std::string> query;
+    std::vector<std::string> pWumpus;
+    std::vector<std::string> pPits;
+    
+    std::vector<bool> tWumpus;
+    std::vector<bool> tPits;
+    
+    bool pitAsk;
+    bool wumpusAsk;
+    
+    std::vector<std::pair<int, int>> goodMove;
+    std::vector<std::pair<int, int>> fairMove;
+    std::vector<std::pair<int, int>> noMove;
+    
+    std::pair<int, int> move;
 //    std::vector<std::pair<int, int>> yuh;
 //    yuh.push_back(std::pair<int, int>(1,1));
 //    yuh.push_back(std::pair<int, int>(0,1));
@@ -30,6 +44,7 @@ int main(int argc, const char * argv[]) {
     Agent person = Agent();
     World game = World();
     do {
+        
         // Get the state that the player is in.
         State currentState = game.returnState(person.returnLocation());
         person.setVisited();
@@ -63,9 +78,51 @@ int main(int argc, const char * argv[]) {
             break;
         }
         
-        if (currentState.isBreeze()) {
-            
+//        currentState.setSafety();
+        
+        pPits = currentState.returnPossiblePits();
+        pWumpus = currentState.returnPossibleWumpus();
+        
+        
+        for (int count = 0; count < pPits.size(); count++) {
+            wumpusAsk = person.ask(pWumpus[count]);
+            pitAsk = person.ask(pPits[count]);
+            if (!wumpusAsk && !pitAsk) {
+                goodMove.push_back(lsHelper.parseSymbol(pPits[count]));
+            } else if (pitAsk && !wumpusAsk) {
+                fairMove.push_back(lsHelper.parseSymbol(pPits[count]));
+            } else if (!pitAsk && wumpusAsk) {
+                fairMove.push_back(lsHelper.parseSymbol(pPits[count]));
+            } else {
+                noMove.push_back(lsHelper.parseSymbol(pPits[count]));
+            }
         }
+        
+        for (int count = 0; count < goodMove.size(); count++) {
+            std::cout << "Good Move: " << goodMove[count].first << ", " << goodMove[count].second << std::endl;
+        }
+        
+        for (int count = 0; count < fairMove.size(); count++) {
+            std::cout << "Fair Move: " << fairMove[count].first << ", " << fairMove[count].second << std::endl;
+        }
+        
+        for (int count = 0; count < noMove.size(); count++) {
+            std::cout << "Bad Move: " << noMove[count].first << ", " << noMove[count].second << std::endl;
+        }
+        
+        if (goodMove.size() > 0) {
+            move = goodMove.back();
+            goodMove.pop_back();
+        } else if (fairMove.size() > 0) {
+            move = fairMove.back();
+            fairMove.pop_back();
+        } else {
+            move = noMove.back();
+            fairMove.pop_back();
+        }
+        
+        // Make the move.
+        person.makeAMove(move);
         
     } while (!person.returnGlitter());
 //    person.returnLocation()
